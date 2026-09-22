@@ -1,0 +1,19 @@
+{
+  "name": "js-handloom",
+  "version": "1.0.0",
+  "description": "J.S.HANDLOOM — premium handloom saree brand website",
+  "private": true,
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=production eleventy",
+    "build:gh": "cross-env ELEVENTY_ENV=production PATH_PREFIX=/J.S.HANDLOOM/ eleventy",
+    "clean": "rimraf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^4.0.2",
+    "cross-env": "^7.0.3",
+    "html-minifier-terser": "^7.2.0",
+    "rimraf": "^5.0.5"
+  }
+}

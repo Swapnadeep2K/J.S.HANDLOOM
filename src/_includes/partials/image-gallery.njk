@@ -1,0 +1,13 @@
+{# Expects `images` (array of filenames in src/images) and `altPrefix` (string) set via {% set %} before including. #}
+<div class="featured-images">
+  <div class="main-saree-image-div">
+    {% galleryImg images[0], altPrefix + " 1", "main-saree-image", 0 %}
+  </div>
+  <div class="side-saree-image-div">
+    {% for img in images %}
+      {% if loop.index0 > 0 %}
+        {% galleryImg img, altPrefix + " " + (loop.index0 + 1), "side-saree-image", loop.index0 %}
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

@@ -1,0 +1,41 @@
+﻿.video {
+  background-color: var(--color-bg-alt);
+  display: flex; /* Flexbox for horizontal layout */
+  justify-content: space-between; /* Space between text and video */
+  align-items: center; /* Vertically center content */
+  padding: 2rem;
+  color: var(--color-primary);
+}
+
+.text-container {
+  flex: 0 0 40%; /* Set width for text container */
+  max-width: 40%; /* Limit max width */
+  padding-right: 20px; /* Add spacing between text and video */
+}
+
+.text-container h2 {
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.video-container iframe {
+  height: 20rem;
+  width: 35rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .video {
+    text-align: center;
+    flex-direction: column;
+  }
+
+  .text-container {
+    flex: 0 0 40%; /* Set width for text container */
+    max-width: 100%; /* Limit max width */
+  }
+
+  .video-container iframe {
+    height: 11rem;
+    width: 22rem;
+  }
+}

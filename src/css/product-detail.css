@@ -1,0 +1,86 @@
+.product-detail-showcase .showcase-wrapper {
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+.product-detail {
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: 1rem 2rem 3rem;
+  color: var(--color-text);
+}
+
+.product-detail-breadcrumb a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.product-detail h1 {
+  color: var(--color-primary);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: var(--space-3);
+}
+
+.product-detail .price {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-accent-dark);
+  margin-top: var(--space-2);
+}
+
+.product-detail .fabric {
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-3);
+}
+
+.product-detail .description {
+  margin-bottom: var(--space-3);
+  line-height: 1.7;
+}
+
+.product-detail .highlights {
+  margin-bottom: var(--space-4);
+}
+
+.product-detail .highlights li {
+  position: relative;
+  padding-left: 1.25rem;
+  margin-bottom: var(--space-2);
+}
+
+.product-detail .highlights li::before {
+  content: "\2022";
+  color: var(--color-accent);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+.enquire-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+  text-decoration: none;
+  padding: 0.85rem 1.75rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--color-primary);
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.enquire-btn:hover {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-accent-contrast);
+}
+
+@media only screen and (max-width: 768px) {
+  .product-detail {
+    text-align: center;
+    padding: 1rem;
+  }
+}

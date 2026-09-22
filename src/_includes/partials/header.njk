@@ -1,0 +1,76 @@
+{% from "partials/icons.njk" import instagram, facebook, whatsapp, menuIcon, closeIcon %}
+<header class="header">
+  <div class="header-content desktop">
+    <div class="logo-container">
+      <a href="{{ '/' | url }}">
+        <img src="{{ '/images/logo-orange.png' | url }}" alt="J.S.HANDLOOM Logo" class="logo" />
+      </a>
+    </div>
+    <nav class="navbar-global">
+      <ul class="nav-links">
+        <li><a href="{{ '/' | url }}">Home</a></li>
+        <li><a href="{{ '/shop/' | url }}">Shop</a></li>
+        <li><a href="{{ '/shop/' | url }}">Categories</a></li>
+        <li><a href="{{ '/about-us/' | url }}">About</a></li>
+        <li><a href="{{ '/#contact' | url }}">Contact Us</a></li>
+      </ul>
+    </nav>
+    <div class="header-icons">
+      <a href="{{ site.social.instagram }}" class="icon" target="_blank" rel="noopener noreferrer" aria-label="J.S.HANDLOOM on Instagram">
+        {{ instagram("var(--color-primary)") }}
+      </a>
+      <a href="{{ site.social.facebook }}" class="icon" target="_blank" rel="noopener noreferrer" aria-label="J.S.HANDLOOM on Facebook">
+        {{ facebook("var(--color-primary)") }}
+      </a>
+      <a href="{{ site.defaultWhatsappMessage | whatsappLink(site.whatsappNumber) }}" class="icon" target="_blank" rel="noopener noreferrer" aria-label="Chat with J.S.HANDLOOM on WhatsApp">
+        {{ whatsapp("var(--color-primary)") }}
+      </a>
+    </div>
+  </div>
+
+  <div class="header-content mobile">
+    <div class="logo-container">
+      <a href="{{ '/' | url }}">
+        <img src="{{ '/images/logo-orange.png' | url }}" alt="J.S.HANDLOOM Logo" class="logo" />
+      </a>
+    </div>
+    <div class="header-icons">
+      <button class="mobile-menu" id="mobileMenuButton" aria-label="Open menu" aria-expanded="false" aria-controls="sidebar">
+        {{ menuIcon("var(--color-primary)") }}
+      </button>
+    </div>
+    <div class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <div class="logo-container">
+          <img src="{{ '/images/logo-white.png' | url }}" alt="J.S.HANDLOOM Logo" class="logo" />
+        </div>
+        <button class="close-button" id="closeSidebarButton" aria-label="Close menu">
+          {{ closeIcon("#fff") }}
+        </button>
+      </div>
+      <div class="sidebar-content">
+        <div class="sidebar-global">
+          <ul class="sidebar-links">
+            <li><a href="{{ '/' | url }}"><div>Home</div><div>&rarr;</div></a></li>
+            <li><a href="{{ '/shop/' | url }}"><div>Shop</div><div>&rarr;</div></a></li>
+            <li><a href="{{ '/shop/' | url }}"><div>Categories</div><div>&rarr;</div></a></li>
+            <li><a href="{{ '/about-us/' | url }}"><div>About</div><div>&rarr;</div></a></li>
+            <li><a href="{{ '/#contact' | url }}"><div>Contact Us</div><div>&rarr;</div></a></li>
+          </ul>
+        </div>
+        <div class="sidebar-icons">
+          <a href="{{ site.social.instagram }}" class="icon" target="_blank" rel="noopener noreferrer" aria-label="J.S.HANDLOOM on Instagram">
+            {{ instagram("#fff") }}
+          </a>
+          <a href="{{ site.social.facebook }}" class="icon" target="_blank" rel="noopener noreferrer" aria-label="J.S.HANDLOOM on Facebook">
+            {{ facebook("#fff") }}
+          </a>
+          <a href="{{ site.defaultWhatsappMessage | whatsappLink(site.whatsappNumber) }}" class="icon" target="_blank" rel="noopener noreferrer" aria-label="Chat with J.S.HANDLOOM on WhatsApp">
+            {{ whatsapp("#fff") }}
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+  </div>
+</header>

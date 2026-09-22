@@ -1,0 +1,34 @@
+---
+layout: layouts/base.njk
+title: "Shop Sarees - J.S.HANDLOOM"
+description: "Browse our full collection of Murshidabad and Muslin silk sarees. Enquire on WhatsApp for pricing and availability."
+permalink: /shop/
+styles:
+  - product-listing
+---
+<section id="product-listing" class="product-listing">
+  <h1>Our Saree Collection</h1>
+  <div id="categories" class="category-chips">
+    {% for cat in categories %}
+    <a href="#{{ cat | slugify }}">{{ cat }}</a>
+    {% endfor %}
+  </div>
+
+  {% for cat in categories %}
+  <h2 id="{{ cat | slugify }}" class="category-heading">{{ cat }}</h2>
+  <div class="product-listing-container">
+    {% for product in products %}
+      {% if product.category == cat %}
+      <div class="card" style="width: 18rem">
+        {% responsiveImg product.images[0], product.name, "card-img-top", "300px", [300, 600], ["webp", "jpeg"] %}
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.price | currency(product.currency) }} &mdash; {{ product.fabric }}</p>
+          <a href="{{ ('/shop/' + product.slug + '/') | url }}" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  {% endfor %}
+</section>

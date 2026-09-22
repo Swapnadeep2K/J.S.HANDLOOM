@@ -1,0 +1,58 @@
+{% from "partials/icons.njk" import whatsapp, closeIcon %}
+<section id="support-widget">
+  <button
+    type="button"
+    id="whatsapp-icon"
+    onclick="togglePopup()"
+    aria-haspopup="true"
+    aria-expanded="false"
+    aria-controls="support-popup"
+    aria-label="Open WhatsApp support options"
+  >
+    {{ whatsapp("#fff") }}
+  </button>
+  <div id="support-popup" role="dialog" aria-label="Support options">
+    <div id="support-header">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M12 2C6.48 2 2 6.48 2 12c0 5.52 4.48 10 10 10s10-4.48 10-10c0-5.52-4.48-10-10-10zm1 15h-2v-2h2v2zm0-4h-2V7h2v6z" fill="#fff" />
+      </svg>
+      <span>Support</span>
+    </div>
+    <div id="support-content">
+      <div class="support-item">
+        <div class="support-svg">
+          <svg height="20" viewBox="0 0 512 512" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect height="358.87" style="fill: #f1f5f7" width="357.904" x="77.045" y="76.565" />
+            <path d="M256.002,293.738l178.947,141.697v-279.74L256.002,293.738z M256.002,293.738" style="fill: #dce6ea" />
+            <path
+              d="M449.861,76.565h-14.912L256.002,218.26L77.045,76.565H62.134c-24.693,0-44.737,20.094-44.737,44.858v269.152c0,24.759,20.044,44.859,44.737,44.859h14.911v-279.74l178.957,138.014l178.947-138.047v279.773h14.912c24.699,0,44.742-20.101,44.742-44.859V121.424C494.604,96.66,474.561,76.565,449.861,76.565L449.861,76.565z M449.861,76.565"
+              style="fill: #f84437"
+            />
+          </svg>
+        </div>
+        <span>Write to us <a href="mailto:{{ site.email }}">{{ site.email }}</a></span>
+      </div>
+      <hr />
+      <div class="support-item">
+        <div class="support-svg">
+          <svg fill="none" height="20" stroke-width="1.5" viewBox="0 0 24 24" width="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path
+              d="M18.1182 14.702L14 15.5C11.2183 14.1038 9.5 12.5 8.5 10L9.26995 5.8699L7.81452 2L4.0636 2C2.93605 2 2.04814 2.93178 2.21654 4.04668C2.63695 6.83 3.87653 11.8765 7.5 15.5C11.3052 19.3052 16.7857 20.9564 19.802 21.6127C20.9668 21.8662 22 20.9575 22 19.7655L22 16.1812L18.1182 14.702Z"
+              stroke="#fff"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <span>Call us (Mon-Sun 8:00 am to 9:00 pm IST): <a href="tel:+{{ site.whatsappNumber }}">{{ site.phoneDisplay }}</a></span>
+      </div>
+      <hr />
+      <div class="support-item">
+        <div class="support-svg">
+          {{ whatsapp("#5acf5f", 20) }}
+        </div>
+        <span>WhatsApp: <a href="{{ site.defaultWhatsappMessage | whatsappLink(site.whatsappNumber) }}" target="_blank" rel="noopener noreferrer">{{ site.whatsappDisplay }}</a></span>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,33 @@
+﻿.hero {
+    background-image: url('../images/hero-banner.jpg');
+    /* Replace with your image URL */
+    background-size: cover;
+    background-position: center;
+    max-height: 500px;
+    /* Adjust height as needed */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.hero .hero-button {
+    border-width: 3px;
+    font-weight: bold;
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.hero .hero-button:hover {
+    background-color: var(--color-primary);
+    border-color: #fff;
+    color: var(--color-primary);
+    background-color: #fff;
+    border-color: var(--color-primary);
+}
+
+@media only screen and (max-width: 768px) {
+    .hero {
+      text-align: center;
+    }
+  }

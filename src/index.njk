@@ -1,0 +1,190 @@
+---
+layout: layouts/base.njk
+title: "J.S.HANDLOOM - Premium Sarees"
+description: "Shop premium Murshidabad and Muslin silk sarees, hand-painted and Govt. Silk Mark certified, from J.S.HANDLOOM."
+permalink: /
+usesLightbox: true
+styles:
+  - hero
+  - video
+  - carousel
+  - product-listing
+  - showcase
+  - image-popup
+---
+<section id="hero" class="hero">
+  <div class="container col-xxl-8 px-4 py-5">
+    <div class="row flex-lg-row align-items-center g-5 py-5">
+      <div class="col-lg-6">
+        <h1 class="display-5 fw-bold lh-1 mb-3">Discover a World of Silk Sarees</h1>
+        <p class="lead">
+          Explore our exclusive range of traditional and modern sarees crafted with love and precision.
+        </p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start">
+          <a href="{{ '/shop/' | url }}" class="hero-button btn btn-primary btn-lg px-4 me-md-2">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="new-collection-promo" class="new-collection-promo">
+  <p>
+    Our next collection is on the loom &mdash;
+    <a href="{{ '/new-arrivals/' | url }}">get notified when it arrives &rarr;</a>
+  </p>
+</section>
+
+<section id="featured-showcase" class="showcase">
+  <h2 class="showcase-title">Explore Our Saree Heritage</h2>
+  <div class="showcase-wrapper">
+    <div class="featured-image-gallery">
+      {% set images = ["main-saree.jpg", "side-saree-1.jpg", "side-saree-2.jpg", "side-saree-3.jpg", "side-saree-4.jpg"] %}
+      {% set altPrefix = "Featured Saree" %}
+      {% include "partials/image-gallery.njk" %}
+
+      <p class="caption">
+        Discover the elegance of handcrafted silk sarees with J.S.HANDLOOM. Featuring hand-painted Murshidabad Silk
+        and intricately designed Pure Muslin Silk with Resham work, each piece is Silk Mark Certified, ensuring
+        authenticity and luxury for every occasion.
+        <br /><br />
+        <strong>Key Points:</strong>
+        <br />
+        &#8226; Murshidabad Silk - Hand-painted design with blouse piece included.
+        <br />
+        &#8226; Muslin Silk - All-over sequence Resham work with Noyel blouse piece.
+        <br />
+        &#8226; Govt Silk Mark Certified for premium quality assurance.
+        <br /><br />
+        Visit our Facebook page to explore the collection!
+      </p>
+
+      <div>
+        <a href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer" class="explore-now">
+          {% from "partials/icons.njk" import facebook %}
+          {{ facebook("#fff", 20) }}
+          Explore More on Facebook &rarr;
+        </a>
+      </div>
+    </div>
+
+    <div class="insta-iframe">
+      <blockquote
+        class="instagram-media"
+        data-instgrm-captioned
+        data-instgrm-permalink="https://www.instagram.com/p/DEp6DMcTbmb/?utm_source=ig_embed&amp;utm_campaign=loading"
+        data-instgrm-version="14"
+        style="background:#fff; border:0; border-radius:3px; box-shadow:0 0 1px 0 rgba(0,0,0,0.5), 0 1px 10px 0 rgba(0,0,0,0.15); margin:1px; max-width:540px; min-width:326px; padding:0; width:99.375%; width:calc(100% - 2px);"
+      >
+        <div style="padding: 16px">
+          <a
+            href="https://www.instagram.com/p/DEp6DMcTbmb/?utm_source=ig_embed&amp;utm_campaign=loading"
+            style="background:#ffffff; line-height:0; padding:0 0; text-align:center; text-decoration:none; width:100%;"
+            target="_blank"
+          >
+            <div style="display: flex; flex-direction: row; align-items: center"></div>
+          </a>
+          <p
+            style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; line-height:17px; margin-bottom:0; margin-top:8px; overflow:hidden; padding:8px 0 7px; text-align:center; text-overflow:ellipsis; white-space:nowrap;"
+          >
+            <a
+              href="https://www.instagram.com/p/DEp6DMcTbmb/?utm_source=ig_embed&amp;utm_campaign=loading"
+              style="color:#c9c8cd; font-family:Arial,sans-serif; font-size:14px; font-style:normal; font-weight:normal; line-height:17px; text-decoration:none;"
+              target="_blank"
+              >A post shared by J.S.HANDLOOM (@j.s.handloom)</a
+            >
+          </p>
+        </div>
+      </blockquote>
+    </div>
+  </div>
+</section>
+
+{% include "partials/image-popup-modal.njk" %}
+
+<section id="video" class="video">
+  <div class="text-container">
+    <h2>Watch A Video</h2>
+    <p>Handloom are the fabrics made in a hand held loom. Its an age old technique that weavers use to make fabric.</p>
+    <p>The loom is usually made of poles, wood logs and ropes. it takes around 2-3 days for a simple 5.5 meter fabric to be made.</p>
+  </div>
+  <div class="video-container">
+    <iframe
+      src="https://www.youtube.com/embed/rvGZCAnK-6w?si=JfRD849ZZgugvkIM"
+      title="YouTube video player"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+      allowfullscreen
+    ></iframe>
+  </div>
+</section>
+
+<section id="testimonials" class="testimonials">
+  <h2>Hear From Our Customers</h2>
+  <div id="carouselExampleAutoplaying" class="carousel carousel-dark slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="card">
+          <div class="card-header">Quote</div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>J.S.HANDLOOM's sarees are truly exquisite. The craftsmanship and attention to detail are remarkable.</p>
+              <footer class="blockquote-footer">Ritu M. from <cite title="Source Title">Instagram family</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-header">Quote</div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>I received so many compliments wearing their saree at a wedding. Absolutely love their collection!</p>
+              <footer class="blockquote-footer">Priya S. from <cite title="Source Title">WhatsApp family</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="card">
+          <div class="card-header">Quote</div>
+          <div class="card-body">
+            <blockquote class="blockquote mb-0">
+              <p>Beautiful designs and excellent service. Highly recommend J.S.HANDLOOM!</p>
+              <footer class="blockquote-footer">Ananya K. from <cite title="Source Title">FaceBook family</cite></footer>
+            </blockquote>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</section>
+
+<section id="product-listing" class="product-listing">
+  <h2>Featured Products</h2>
+  <div class="product-listing-container">
+    {% for product in products %}
+      {% if product.featured %}
+      <div class="card" style="width: 18rem">
+        {% responsiveImg product.images[0], product.name, "card-img-top", "300px", [300, 600], ["webp", "jpeg"] %}
+        <div class="card-body">
+          <h5 class="card-title">{{ product.name }}</h5>
+          <p class="card-text">{{ product.price | currency(product.currency) }} &mdash; {{ product.fabric }}</p>
+          <a href="{{ ('/shop/' + product.slug + '/') | url }}" class="btn btn-primary">View Details</a>
+        </div>
+      </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+  <div class="view-all-products">
+    <a href="{{ '/shop/' | url }}" class="btn btn-outline-primary">View All Sarees</a>
+  </div>
+</section>

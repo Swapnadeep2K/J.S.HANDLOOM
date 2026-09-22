@@ -1,0 +1,17 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.name }}",
+  "url": "{{ site.url }}",
+  "logo": "{{ site.url }}{{ '/images/logo-orange.png' | url }}",
+  "description": "{{ site.description }}",
+  "sameAs": ["{{ site.social.instagram }}", "{{ site.social.facebook }}"],
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "{{ site.email }}",
+    "telephone": "{{ site.phoneDisplay }}",
+    "contactType": "customer service"
+  }
+}
+</script>

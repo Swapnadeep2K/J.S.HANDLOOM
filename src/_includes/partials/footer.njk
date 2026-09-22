@@ -1,0 +1,66 @@
+{% from "partials/icons.njk" import instagram, facebook, whatsapp %}
+<footer id="contact" class="footer">
+  <div class="footer-top">
+    <div class="footer-content">
+      <div class="footer-section">
+        <img src="{{ '/images/logo-white.png' | url }}" alt="J.S.HANDLOOM Logo" class="footer-logo" />
+        <p>Bringing you the finest silk sarees crafted with tradition and love.</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="{{ '/shop/' | url }}">Collections</a></li>
+          <li><a href="{{ '/about-us/' | url }}">About</a></li>
+          <li><a href="{{ '/shop/' | url }}">Categories</a></li>
+          <li><a href="{{ '/new-arrivals/' | url }}">New Arrivals</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Info</h3>
+        <ul>
+          <li><a href="{{ '/#contact' | url }}">Contact Us</a></li>
+          <li><a href="{{ '/new-arrivals/' | url }}">Shipping</a></li>
+          <li><a href="{{ '/new-arrivals/' | url }}">Returns</a></li>
+        </ul>
+      </div>
+      <div class="footer-section">
+        <h3>Our Mission</h3>
+        <p>Stylish, versatile, and unique sarees handcrafted with sustainability in mind.</p>
+      </div>
+    </div>
+    <br />
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Subscribe</h3>
+        <a class="email-button" href="mailto:{{ site.email }}">
+          Email <span class="arrow">&rarr;</span>
+        </a>
+      </div>
+      <div class="footer-section">
+        <h3>Our Socials</h3>
+        <div class="footer-social-container">
+          <a href="{{ site.social.instagram }}" class="footer-social-icons" target="_blank" rel="noopener noreferrer" aria-label="J.S.HANDLOOM on Instagram">
+            {{ instagram("var(--color-primary)") }}
+          </a>
+          <a href="{{ site.social.facebook }}" class="footer-social-icons" target="_blank" rel="noopener noreferrer" aria-label="J.S.HANDLOOM on Facebook">
+            {{ facebook("var(--color-primary)") }}
+          </a>
+          <a href="{{ site.defaultWhatsappMessage | whatsappLink(site.whatsappNumber) }}" class="footer-social-icons" target="_blank" rel="noopener noreferrer" aria-label="Chat with J.S.HANDLOOM on WhatsApp">
+            {{ whatsapp("var(--color-primary)") }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="language-selector">
+      <label for="language">Language:</label>
+      <select name="language" id="language">
+        <option value="India">&#127470;&#127475; India</option>
+        <option value="US">&#127482;&#127480; US</option>
+        <option value="UK">&#127468;&#127463; UK</option>
+      </select>
+    </div>
+    <p>&copy; {% currentYear %} J.S.HANDLOOM. All Rights Reserved.</p>
+  </div>
+</footer>

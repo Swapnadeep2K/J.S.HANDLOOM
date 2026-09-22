@@ -1,0 +1,51 @@
+---
+layout: layouts/product.njk
+pagination:
+  data: products
+  size: 1
+  alias: product
+  addAllPagesToCollections: true
+permalink: "/shop/{{ product.slug }}/"
+styles:
+  - showcase
+  - image-popup
+  - product-detail
+eleventyComputed:
+  title: "{{ product.name }} - J.S.HANDLOOM"
+  description: "{{ product.shortDescription }}"
+  ogImage: "/images/{{ product.images[0] }}"
+---
+<section id="featured-showcase" class="showcase product-detail-showcase">
+  <div class="showcase-wrapper">
+    <div class="featured-image-gallery">
+      {% set images = product.images %}
+      {% set altPrefix = product.name %}
+      {% include "partials/image-gallery.njk" %}
+    </div>
+  </div>
+</section>
+
+{% include "partials/image-popup-modal.njk" %}
+
+<section class="product-detail">
+  <p class="product-detail-breadcrumb"><a href="{{ '/shop/' | url }}">&larr; Back to all sarees</a></p>
+  <h1>{{ product.name }}</h1>
+  <p class="price">{{ product.price | currency(product.currency) }}</p>
+  <p class="fabric">{{ product.fabric }}</p>
+  <p class="description">{{ product.description }}</p>
+  <ul class="highlights">
+    {% for h in product.highlights %}
+    <li>{{ h }}</li>
+    {% endfor %}
+  </ul>
+  <a
+    class="enquire-btn"
+    href="{{ ('Hi, I\'m interested in the ' + product.name + ' listed on your website. Could you share more details and pricing?') | whatsappLink(site.whatsappNumber) }}"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    {% from "partials/icons.njk" import whatsapp %}
+    {{ whatsapp("#fff", 20) }}
+    Enquire on WhatsApp
+  </a>
+</section>

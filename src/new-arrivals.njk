@@ -1,0 +1,35 @@
+---
+layout: layouts/base.njk
+title: "New Arrivals - J.S.HANDLOOM"
+description: "Our next saree collection is on the loom. Get notified on WhatsApp the moment it arrives."
+permalink: /new-arrivals/
+styles:
+  - coming-soon
+---
+<section id="coming-soon" class="coming-soon">
+  <div class="coming-soon-container">
+    {% responsiveImg "saree-cartoon.png", "Saree Cartoon", "", "160px", [160, 320], ["webp", "png"] %}
+    <h1>Our Next Collection Is On The Loom.</h1>
+    <p>
+      New Murshidabad and Muslin silk designs are being woven right now. Message us on WhatsApp and we'll
+      notify you the moment they arrive, or follow along on Facebook for behind-the-scenes weaving updates.
+    </p>
+    <div class="coming-soon-ctas">
+      <a class="cta shake" href="{{ ('Hi, please let me know when your new saree collection arrives!') | whatsappLink(site.whatsappNumber) }}" target="_blank" rel="noopener noreferrer">
+        {% from "partials/icons.njk" import whatsapp %}
+        {{ whatsapp("#fff", 20) }}
+        Notify Me on WhatsApp
+      </a>
+      <a class="cta" href="{{ site.social.facebook }}" target="_blank" rel="noopener noreferrer">
+        {% from "partials/icons.njk" import facebook %}
+        {{ facebook("#fff", 20) }}
+        Explore More on Facebook &rarr;
+      </a>
+    </div>
+  </div>
+  <div class="weaving-animation">
+    <div class="thread thread-1"></div>
+    <div class="thread thread-2"></div>
+    <div class="thread thread-3"></div>
+  </div>
+</section>

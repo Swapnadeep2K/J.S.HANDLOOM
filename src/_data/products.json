@@ -1,0 +1,80 @@
+[
+  {
+    "slug": "murshidabad-silk-hand-painted-saree",
+    "name": "Murshidabad Silk Hand-Painted Saree",
+    "category": "Murshidabad Silk",
+    "fabric": "Pure Murshidabad Silk",
+    "price": 8500,
+    "currency": "INR",
+    "shortDescription": "Hand-painted Murshidabad silk saree with a matching blouse piece, Silk Mark certified.",
+    "description": "A hand-painted Murshidabad Silk saree featuring traditional motifs rendered by skilled artisans. Comes complete with a matching blouse piece and is Govt. Silk Mark Certified for guaranteed authenticity.",
+    "highlights": ["Hand-painted design", "Blouse piece included", "Govt. Silk Mark Certified"],
+    "images": ["main-saree.jpg", "side-saree-1.jpg"],
+    "featured": true
+  },
+  {
+    "slug": "muslin-silk-resham-work-saree",
+    "name": "Muslin Silk Resham Work Saree",
+    "category": "Muslin Silk",
+    "fabric": "Pure Muslin Silk",
+    "price": 6900,
+    "currency": "INR",
+    "shortDescription": "All-over sequence Resham work saree with a Noyel blouse piece.",
+    "description": "An intricately designed Pure Muslin Silk saree with all-over sequence Resham embroidery, paired with a Noyel blouse piece. Govt. Silk Mark Certified for premium quality assurance.",
+    "highlights": ["All-over Resham work", "Noyel blouse piece", "Govt. Silk Mark Certified"],
+    "images": ["side-saree-2.jpg", "side-saree-3.jpg"],
+    "featured": true
+  },
+  {
+    "slug": "classic-murshidabad-silk-saree",
+    "name": "Classic Murshidabad Silk Saree",
+    "category": "Murshidabad Silk",
+    "fabric": "Pure Murshidabad Silk",
+    "price": 7400,
+    "currency": "INR",
+    "shortDescription": "A timeless Murshidabad silk saree in rich traditional tones.",
+    "description": "A classic Murshidabad Silk saree woven for everyday elegance and special occasions alike, with the same Silk Mark certified authenticity as our premium range.",
+    "highlights": ["Lightweight drape", "Traditional border", "Govt. Silk Mark Certified"],
+    "images": ["side-saree-4.jpg", "main-saree.jpg"],
+    "featured": true
+  },
+  {
+    "slug": "muslin-silk-noyel-blouse-saree",
+    "name": "Muslin Silk Noyel Blouse Saree",
+    "category": "Muslin Silk",
+    "fabric": "Pure Muslin Silk",
+    "price": 7200,
+    "currency": "INR",
+    "shortDescription": "Delicate Muslin silk weave with a coordinated Noyel blouse piece.",
+    "description": "A delicately woven Pure Muslin Silk saree finished with fine Resham detailing and a coordinated Noyel blouse piece — light enough for all-day wear, rich enough for celebrations.",
+    "highlights": ["Lightweight Muslin weave", "Noyel blouse piece", "Govt. Silk Mark Certified"],
+    "images": ["side-saree-1.jpg", "side-saree-2.jpg"],
+    "featured": false
+  },
+  {
+    "slug": "hand-painted-silk-saree-with-blouse",
+    "name": "Hand-Painted Silk Saree with Blouse Piece",
+    "category": "Murshidabad Silk",
+    "fabric": "Pure Murshidabad Silk",
+    "price": 9200,
+    "currency": "INR",
+    "shortDescription": "Statement hand-painted silk saree, complete with a matching blouse piece.",
+    "description": "Each motif on this Murshidabad Silk saree is hand-painted by skilled artisans, making every piece one of a kind. Includes a matching blouse piece and Govt. Silk Mark certification.",
+    "highlights": ["One-of-a-kind hand-painted motifs", "Blouse piece included", "Govt. Silk Mark Certified"],
+    "images": ["side-saree-3.jpg", "side-saree-4.jpg"],
+    "featured": false
+  },
+  {
+    "slug": "resham-work-muslin-silk-saree",
+    "name": "Resham Work Muslin Silk Saree",
+    "category": "Muslin Silk",
+    "fabric": "Pure Muslin Silk",
+    "price": 6500,
+    "currency": "INR",
+    "shortDescription": "Everyday-elegant Muslin silk saree with subtle Resham work.",
+    "description": "A subtly embellished Pure Muslin Silk saree with fine Resham work along the border — an easy, elegant choice for both daily wear and festive occasions.",
+    "highlights": ["Subtle Resham border", "Breathable Muslin weave", "Govt. Silk Mark Certified"],
+    "images": ["main-saree.jpg", "side-saree-2.jpg"],
+    "featured": false
+  }
+]
