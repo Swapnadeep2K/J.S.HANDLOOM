@@ -1,6 +1,6 @@
 /* Stats Section */
 .stats-section {
-  background-color: #3663d8;
+  background-color: var(--color-accent-blue);
   color: #fff;
   padding: 2rem;
   text-align: center;

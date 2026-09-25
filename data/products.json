@@ -1,0 +1,62 @@
+[
+  {
+    "id": "murshidabad-hand-painted-maroon",
+    "name": "Murshidabad Silk – Hand-Painted, Maroon",
+    "category": "Murshidabad Silk",
+    "categorySlug": "murshidabad-silk",
+    "description": "Hand-painted design on pure Murshidabad silk. Blouse piece included.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/3a001e/ede9d0?text=Murshidabad+Silk",
+    "whatsappMessage": "Hi, I'm interested in the Murshidabad Silk (Hand-Painted, Maroon) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "murshidabad-hand-painted-ivory",
+    "name": "Murshidabad Silk – Hand-Painted, Ivory",
+    "category": "Murshidabad Silk",
+    "categorySlug": "murshidabad-silk",
+    "description": "Hand-painted motifs on ivory Murshidabad silk. Blouse piece included.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Murshidabad+Silk",
+    "whatsappMessage": "Hi, I'm interested in the Murshidabad Silk (Hand-Painted, Ivory) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "muslin-resham-noyel",
+    "name": "Muslin Silk – Resham Work, Noyel Blouse",
+    "category": "Muslin Silk",
+    "categorySlug": "muslin-silk",
+    "description": "All-over sequence Resham work on pure Muslin silk, with Noyel blouse piece.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/3a001e/ede9d0?text=Muslin+Silk",
+    "whatsappMessage": "Hi, I'm interested in the Muslin Silk (Resham Work, Noyel Blouse) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "muslin-resham-classic",
+    "name": "Muslin Silk – Resham Work, Classic",
+    "category": "Muslin Silk",
+    "categorySlug": "muslin-silk",
+    "description": "Delicate all-over Resham embroidery on soft Muslin silk.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Muslin+Silk",
+    "whatsappMessage": "Hi, I'm interested in the Muslin Silk (Resham Work, Classic) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "silk-mark-certified-gold",
+    "name": "Silk Mark Certified – Gold Border",
+    "category": "Silk Mark Certified",
+    "categorySlug": "silk-mark-certified",
+    "description": "Govt Silk Mark Certified saree with a traditional gold border weave.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/3a001e/ede9d0?text=Silk+Mark+Certified",
+    "whatsappMessage": "Hi, I'm interested in the Silk Mark Certified (Gold Border) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "silk-mark-certified-festive",
+    "name": "Silk Mark Certified – Festive Weave",
+    "category": "Silk Mark Certified",
+    "categorySlug": "silk-mark-certified",
+    "description": "Govt Silk Mark Certified saree in a festive traditional weave.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Silk+Mark+Certified",
+    "whatsappMessage": "Hi, I'm interested in the Silk Mark Certified (Festive Weave) saree. Could you share more details and pricing?"
+  }
+]

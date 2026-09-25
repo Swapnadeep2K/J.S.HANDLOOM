@@ -1,6 +1,9 @@
 .hero {
     background-image: url('../images/hero-banner.jpg');
-    /* Replace with your image URL */
+    background-image: image-set(
+      url('../images/hero-banner.webp') type('image/webp'),
+      url('../images/hero-banner.jpg') type('image/jpeg')
+    );
     background-size: cover;
     background-position: center;
     max-height: 500px;

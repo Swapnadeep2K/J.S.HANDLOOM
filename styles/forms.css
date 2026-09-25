@@ -10,7 +10,7 @@ form input[type="email"] {
 form button {
   padding: 10px 20px;
   border: none;
-  background-color: #3663d8;
+  background-color: var(--color-accent-blue);
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
@@ -18,5 +18,5 @@ form button {
 }
 
 form button:hover {
-  background-color: #77beff;
+  background-color: var(--color-accent-blue-light);
 }

@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="360" viewBox="0 0 480 360" role="img" aria-label="Handloom weaving illustration">
+  <defs>
+    <pattern id="weave" x="0" y="0" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect width="10" height="10" fill="#ede9d0"/>
+      <rect x="0" y="0" width="5" height="5" fill="#d4c8a8" opacity="0.5"/>
+      <rect x="5" y="5" width="5" height="5" fill="#d4c8a8" opacity="0.5"/>
+    </pattern>
+  </defs>
+
+  <!-- Background with subtle woven texture -->
+  <rect width="480" height="360" fill="url(#weave)"/>
+
+  <!-- Outer border -->
+  <rect x="14" y="14" width="452" height="332" fill="none" stroke="#3a001e" stroke-width="3.5"/>
+  <!-- Inner border line -->
+  <rect x="22" y="22" width="436" height="316" fill="none" stroke="#3a001e" stroke-width="1"/>
+
+  <!-- Corner diamonds -->
+  <polygon points="14,14 30,14 14,30" fill="#3a001e"/>
+  <polygon points="466,14 450,14 466,30" fill="#3a001e"/>
+  <polygon points="14,346 30,346 14,330" fill="#3a001e"/>
+  <polygon points="466,346 450,346 466,330" fill="#3a001e"/>
+
+  <!-- Loom frame: two vertical posts -->
+  <rect x="148" y="68" width="14" height="224" fill="#3a001e" rx="3"/>
+  <rect x="318" y="68" width="14" height="224" fill="#3a001e" rx="3"/>
+
+  <!-- Top beam -->
+  <rect x="142" y="64" width="196" height="18" fill="#3a001e" rx="3"/>
+  <!-- Bottom beam -->
+  <rect x="142" y="278" width="196" height="18" fill="#3a001e" rx="3"/>
+
+  <!-- Warp threads (vertical) — drawn as alternating cream/tan lines -->
+  <g stroke="#8a6a3a" stroke-width="1.5" opacity="0.7">
+    <line x1="170" y1="82" x2="170" y2="278"/>
+    <line x1="180" y1="82" x2="180" y2="278"/>
+    <line x1="190" y1="82" x2="190" y2="278"/>
+    <line x1="200" y1="82" x2="200" y2="278"/>
+    <line x1="210" y1="82" x2="210" y2="278"/>
+    <line x1="220" y1="82" x2="220" y2="278"/>
+    <line x1="230" y1="82" x2="230" y2="278"/>
+    <line x1="240" y1="82" x2="240" y2="278"/>
+    <line x1="250" y1="82" x2="250" y2="278"/>
+    <line x1="260" y1="82" x2="260" y2="278"/>
+    <line x1="270" y1="82" x2="270" y2="278"/>
+    <line x1="280" y1="82" x2="280" y2="278"/>
+    <line x1="290" y1="82" x2="290" y2="278"/>
+    <line x1="300" y1="82" x2="300" y2="278"/>
+    <line x1="310" y1="82" x2="310" y2="278"/>
+  </g>
+
+  <!-- Woven section (lower half already woven) -->
+  <rect x="162" y="190" width="156" height="88" fill="#ede9d0" opacity="0.6"/>
+  <g stroke="#3a001e" stroke-width="1.2" opacity="0.5">
+    <line x1="162" y1="198" x2="318" y2="198"/>
+    <line x1="162" y1="206" x2="318" y2="206"/>
+    <line x1="162" y1="214" x2="318" y2="214"/>
+    <line x1="162" y1="222" x2="318" y2="222"/>
+    <line x1="162" y1="230" x2="318" y2="230"/>
+    <line x1="162" y1="238" x2="318" y2="238"/>
+    <line x1="162" y1="246" x2="318" y2="246"/>
+    <line x1="162" y1="254" x2="318" y2="254"/>
+    <line x1="162" y1="262" x2="318" y2="262"/>
+    <line x1="162" y1="270" x2="318" y2="270"/>
+  </g>
+
+  <!-- Shuttle -->
+  <ellipse cx="240" cy="188" rx="62" ry="10" fill="#5c3317" rx="6"/>
+  <ellipse cx="240" cy="188" rx="58" ry="7" fill="#7a4520"/>
+  <line x1="182" y1="188" x2="298" y2="188" stroke="#c8a060" stroke-width="2"/>
+
+  <!-- Heddle rod -->
+  <rect x="155" y="148" width="170" height="6" fill="#5c3317" rx="2"/>
+  <line x1="162" y1="154" x2="162" y2="190" stroke="#8a6a3a" stroke-width="1" stroke-dasharray="3,3"/>
+  <line x1="318" y1="154" x2="318" y2="190" stroke="#8a6a3a" stroke-width="1" stroke-dasharray="3,3"/>
+
+  <!-- Label -->
+  <text x="240" y="330" text-anchor="middle" font-family="Georgia, serif" font-size="13" fill="#3a001e" letter-spacing="2" opacity="0.8">HANDCRAFTED WITH TRADITION</text>
+</svg>
