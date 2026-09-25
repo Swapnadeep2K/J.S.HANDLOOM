@@ -9,13 +9,16 @@ handwoven sarees and fabrics. This site serves as the online presence for the
 brand, featuring a product catalog with WhatsApp-based enquiry (no accounts,
 no payment), an about page, and product showcases.
 
-## Project plan
+## Pages
 
-See `PLAN.txt` in this repo for the full product/UX plan: problem
-statement, page-by-page UX spec, prioritized feature backlog with
-acceptance criteria, technical architecture rationale, and a status
-tracker of what's built vs. not yet started. Read that first before
-picking up new work.
+| Page | File | Purpose |
+|---|---|---|
+| Home | `index.html` | Hero, saree showcase, video, testimonials, featured products |
+| Shop | `shop.html` | Full product catalog with category filter chips |
+| About | `about-us.html` | Brand story, values, process steps |
+| Shipping | `shipping.html` | Delivery timelines, areas, charges, tracking |
+| Returns | `returns.html` | Returns window, eligibility, exchange process |
+| Coming Soon | `coming-soon.html` | Redirects old links to shop.html |
 
 ## Structure
 
@@ -25,19 +28,23 @@ Source files (edit these):
 ├── index.html            # Home page
 ├── about-us.html         # About the brand
 ├── shop.html             # Product catalog
+├── shipping.html         # Shipping policy
+├── returns.html          # Returns & exchanges policy
 ├── coming-soon.html      # Redirects old links to shop.html
 ├── partials/             # Shared header / footer / support-widget markup
 │   ├── header.html
 │   ├── footer.html
 │   └── support-widget.html
 ├── data/
-│   └── products.json     # The product catalog - edit this to add/change products
-├── images/
-│   └── products/         # Product photos (currently placeholder SVGs - replace with real photos)
+│   └── products.json     # Product catalog — edit to add/change products
+├── images/               # Source images (JPEGs + WebP variants side-by-side)
 ├── styles/
-│   └── tokens.css         # Brand colors as CSS variables - change these to restyle the whole site
+│   ├── tokens.css        # Brand colours and spacing — change here to restyle the whole site
+│   └── *.css             # Per-section stylesheets
 ├── scripts/
-│   └── build.js           # The build script (see below)
+│   ├── build.js          # Build script (see below)
+│   ├── shop.js           # Client-side category filter for shop page
+│   └── optimize-images.js # One-time image compression via sharp (already run)
 └── .github/workflows/deploy.yml
 ```
 
@@ -116,6 +123,7 @@ Live site: [https://swapnadeep2k.github.io/J.S.HANDLOOM/](https://swapnadeep2k.g
 
 ## Branch info
 
-- `main` — production branch (this structure)
+- `main` — production branch, triggers GitHub Pages deploy on push
+- `website-3-ui-polish` — current working branch (image optimisation, new pages, build system, CSS tokens)
 - `website-1-legacy` — earlier static HTML version, superseded
-- `website-2-redesign` — an earlier, now-abandoned Eleventy experiment; not in use
+- `website-2-redesign` — earlier abandoned Eleventy experiment, not in use
