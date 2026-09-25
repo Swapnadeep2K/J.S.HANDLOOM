@@ -1,0 +1,62 @@
+[
+  {
+    "id": "category-a-1",
+    "name": "Category A – Style 1",
+    "category": "Category A",
+    "categorySlug": "category-a",
+    "description": "Placeholder description for Category A, Style 1.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/3a001e/ede9d0?text=Category+A",
+    "whatsappMessage": "Hi, I'm interested in the Category A (Style 1) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "category-a-2",
+    "name": "Category A – Style 2",
+    "category": "Category A",
+    "categorySlug": "category-a",
+    "description": "Placeholder description for Category A, Style 2.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Category+A",
+    "whatsappMessage": "Hi, I'm interested in the Category A (Style 2) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "category-b-1",
+    "name": "Category B – Style 1",
+    "category": "Category B",
+    "categorySlug": "category-b",
+    "description": "Placeholder description for Category B, Style 1.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/3a001e/ede9d0?text=Category+B",
+    "whatsappMessage": "Hi, I'm interested in the Category B (Style 1) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "category-b-2",
+    "name": "Category B – Style 2",
+    "category": "Category B",
+    "categorySlug": "category-b",
+    "description": "Placeholder description for Category B, Style 2.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Category+B",
+    "whatsappMessage": "Hi, I'm interested in the Category B (Style 2) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "category-c-1",
+    "name": "Category C – Style 1",
+    "category": "Category C",
+    "categorySlug": "category-c",
+    "description": "Placeholder description for Category C, Style 1.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/3a001e/ede9d0?text=Category+C",
+    "whatsappMessage": "Hi, I'm interested in the Category C (Style 1) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "category-c-2",
+    "name": "Category C – Style 2",
+    "category": "Category C",
+    "categorySlug": "category-c",
+    "description": "Placeholder description for Category C, Style 2.",
+    "price": "Price on enquiry",
+    "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Category+C",
+    "whatsappMessage": "Hi, I'm interested in the Category C (Style 2) saree. Could you share more details and pricing?"
+  }
+]
