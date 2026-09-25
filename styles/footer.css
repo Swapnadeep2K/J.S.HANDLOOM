@@ -39,7 +39,7 @@
 }
 
 .footer-section ul li a:hover {
-  color: #77beff; /* Contrast blue color */
+  color: var(--color-accent-blue-light);
 }
 
 .footer-bottom {
@@ -126,4 +126,24 @@
 
 .footer .arrow {
   margin-left: 5px; /* Adjust as needed */
+}
+
+@media only screen and (max-width: 768px) {
+  .footer-content {
+    gap: 24px;
+  }
+  .footer-section {
+    flex: 1 1 calc(50% - 12px);
+  }
+  .footer-bottom {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .footer-section {
+    flex: 1 1 100%;
+  }
 }

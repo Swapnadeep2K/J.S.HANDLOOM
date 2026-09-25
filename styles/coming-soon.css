@@ -7,7 +7,11 @@
 
 .coming-soon {
   background-color: #fff;
-  background-image: url("/images/coming-soon-background.jpg");
+  background-image: url('../images/coming-soon-background.jpg');
+  background-image: image-set(
+    url('../images/coming-soon-background.webp') type('image/webp'),
+    url('../images/coming-soon-background.jpg') type('image/jpeg')
+  );
   background-size: cover;
   background-position: center;
   color: #3a001e;
@@ -34,7 +38,7 @@
 
 .coming-soon h1 {
   font-size: 3rem;
-  color: #8a4b3b;
+  color: var(--color-accent-brown);
 }
 
 .coming-soon p {
@@ -102,13 +106,13 @@
 .thread-1 {
   top: 20%;
   animation-delay: 0s;
-  background-color: #ff5733;
+  background-color: var(--color-accent-orange);
 }
 
 .thread-2 {
   top: 50%;
   animation-delay: 3s;
-  background-color: #c44f6d;
+  background-color: var(--color-accent-rose);
 
 }
 

@@ -3,6 +3,10 @@
   background-color: white;
   color: #3a001e;
   padding: 1rem 2rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.07);
 }
 
 .header-content {
@@ -12,7 +16,12 @@
 }
 
 .logo {
-  height: 3rem;
+  height: 4rem;
+  width: auto;
+}
+
+.logo-container a {
+  display: inline-flex;
 }
 
 .navbar-global {
@@ -33,7 +42,7 @@
 }
 
 .nav-links a:hover {
-  color: #3663d8; /* Base blue color */
+  color: var(--color-accent-blue);
 }
 
 /* .nav-links li {
@@ -41,8 +50,12 @@
 } */
 
 .header-icons .icon {
-  margin-left: 1.25rem;
-  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .mobile-menu {
@@ -108,7 +121,7 @@
 }
 
 .sidebar-links a:hover {
-  color: #77beff;
+  color: var(--color-accent-blue-light);
 }
 
 .sidebar-icons {
@@ -118,8 +131,11 @@
 }
 
 .sidebar-icons .icon {
-  margin: 0 1rem;
-  font-size: 1.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* Overlay for Sidebar */

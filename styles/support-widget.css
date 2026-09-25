@@ -50,7 +50,7 @@
   font-weight: bold;
   text-align: center;
   color: white;
-  border-bottom: 1px solid #3c3c3c;
+  border-bottom: 1px solid var(--color-border-dark);
 }
 
 #support-header img {
@@ -92,7 +92,7 @@
 }
 
 .support-item a {
-  color: #77beff;
+  color: var(--color-accent-blue-light);
   text-decoration: none;
 }
 
@@ -102,7 +102,7 @@
 
 /* Footer section styling */
 #support-footer {
-  background-color: #1f1f1f;
+  background-color: var(--color-bg-dark);
   padding: 10px;
   text-align: center;
   border-radius: 0 0 10px 10px;
@@ -110,7 +110,7 @@
 }
 
 #support-footer a {
-  color: #77beff;
+  color: var(--color-accent-blue-light);
   text-decoration: none;
   margin: 0 5px;
 }

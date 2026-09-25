@@ -1,0 +1,36 @@
+:root {
+  /* Brand */
+  --color-maroon-900: #3a001e;
+  --color-cream: #ede9d0;
+  --color-white: #ffffff;
+
+  /* Accent */
+  --color-accent-blue: #3663d8;
+  --color-accent-blue-light: #77beff;
+  --color-accent-orange: #ff5733;
+  --color-accent-rose: #c44f6d;
+  --color-accent-brown: #8a4b3b;
+
+  /* Dark surfaces (support widget popup) */
+  --color-bg-dark: #1f1f1f;
+  --color-border-dark: #3c3c3c;
+
+  /* Text */
+  --color-text-dark: #333333;
+  --color-text-mid: #444444;
+  --color-text-light: #666666;
+
+  /* Borders / neutrals */
+  --color-border: #cccccc;
+  --color-border-light: #aaaaaa;
+
+  /* Type + spacing */
+  --font-brand: "Poppins", sans-serif;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+}

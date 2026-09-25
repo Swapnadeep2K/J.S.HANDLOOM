@@ -117,8 +117,13 @@
   .showcase {
     text-align: center;
   }
-  
+
   .showcase-wrapper {
     flex-direction: column;
+  }
+
+  .insta-iframe {
+    max-height: 480px;
+    overflow: hidden;
   }
 }

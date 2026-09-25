@@ -23,6 +23,21 @@
   width: 35rem;
 }
 
+.video-placeholder {
+  height: 20rem;
+  width: 35rem;
+  background-color: var(--color-maroon-900, #3a001e);
+  color: rgba(237, 233, 208, 0.6);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+}
+
 @media only screen and (max-width: 768px) {
   .video {
     text-align: center;
@@ -34,7 +49,8 @@
     max-width: 100%; /* Limit max width */
   }
 
-  .video-container iframe {
+  .video-container iframe,
+  .video-placeholder {
     height: 11rem;
     width: 22rem;
   }
