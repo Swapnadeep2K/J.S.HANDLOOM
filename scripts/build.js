@@ -182,7 +182,7 @@ function renderPDP(product) {
       <span aria-hidden="true">›</span>
       <a href="../shop.html">Shop</a>
       <span aria-hidden="true">›</span>
-      <span>${category}</span>
+      <a href="../collections/${escapeHtml(product.categorySlug)}.html">${category}</a>
       <span aria-hidden="true">›</span>
       <span>${name}</span>
     </nav>
@@ -270,6 +270,7 @@ function processProducts(html) {
   });
   html = html.replace(/<!--#category-filters-->/g, () => renderFilterChips(products));
   html = html.replace(/<!--#collections-->/g, () => renderCollectionCards());
+  html = html.replace(/<!--#filter-bar-->/g, () => renderFilterBar());
   return html;
 }
 
@@ -284,6 +285,55 @@ function copyDir(src, dest) {
       fs.copyFileSync(srcPath, destPath);
     }
   }
+}
+
+// pool: which products to derive option values from
+// showCategory: include the Collection dropdown (false on category pages)
+function renderFilterBar(pool, showCategory) {
+  pool         = pool || products;
+  showCategory = showCategory !== false;
+
+  const categories = [...new Map(products.map(p => [p.categorySlug, p.category])).entries()];
+  const colours    = [...new Set(pool.map(p => p.colour).filter(v => v && v !== "TBD"))].sort();
+  const works      = [...new Set(pool.map(p => p.work).filter(v => v && v !== "TBD"))].sort();
+  const avails     = [...new Set(pool.map(p => p.availability).filter(v => v && v !== "TBD"))].sort();
+
+  const opts = (arr) => arr.map(v => `<option value="${escapeHtml(v)}">${escapeHtml(v)}</option>`).join("");
+  const catOpts = categories.map(([slug, name]) =>
+    `<option value="${escapeHtml(slug)}">${escapeHtml(name)}</option>`).join("");
+
+  const categorySelect = showCategory ? `<select class="shop-filter-select" data-filter="category" aria-label="Filter by category">
+      <option value="">All Collections</option>
+      ${catOpts}
+    </select>` : "";
+
+  return `<div class="shop-filter-section">
+  <div class="shop-filter-header">
+    <span class="shop-filter-label">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M2 4h12M4 8h8M6 12h4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+      </svg>
+      Filters
+    </span>
+    <span class="shop-result-count" id="shop-result-count">${pool.length} sarees</span>
+  </div>
+  <div class="shop-filter-bar" id="shop-filter-bar">
+    ${categorySelect}
+    <select class="shop-filter-select" data-filter="colour" aria-label="Filter by colour">
+      <option value="">All Colours</option>
+      ${opts(colours)}
+    </select>
+    <select class="shop-filter-select" data-filter="work" aria-label="Filter by work">
+      <option value="">All Work Types</option>
+      ${opts(works)}
+    </select>
+    <select class="shop-filter-select" data-filter="availability" aria-label="Filter by availability">
+      <option value="">All Availability</option>
+      ${opts(avails)}
+    </select>
+    <button class="shop-filter-clear" id="shop-filter-clear" type="button">&#10005; Clear</button>
+  </div>
+</div>`;
 }
 
 function renderCollectionCards() {
@@ -369,15 +419,19 @@ function renderCategoryPage(slug, name, categoryProducts) {
       <p>${count} ${count === 1 ? "saree" : "sarees"} in this collection</p>
     </section>
 
+    ${renderFilterBar(categoryProducts, false)}
+
     <section class="shop-grid" style="max-width:1100px;margin:0 auto;padding:24px 24px 56px;">
       ${cardsHtml}
     </section>
+    <p class="shop-empty" id="shop-empty">No sarees match your filters — try adjusting or clearing them.</p>
 
     ${footerHtml}
     ${widgetHtml}
   </body>
   <script src="../scripts/header.js"></script>
   <script src="../scripts/support-widget.js"></script>
+  <script src="../scripts/shop.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </html>`;
