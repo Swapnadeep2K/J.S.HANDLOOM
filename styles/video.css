@@ -1,5 +1,5 @@
 .video {
-  background-color: #ede9d0;
+  background-color: var(--color-white);
   display: flex; /* Flexbox for horizontal layout */
   justify-content: space-between; /* Space between text and video */
   align-items: center; /* Vertically center content */

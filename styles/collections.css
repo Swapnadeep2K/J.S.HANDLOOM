@@ -1,6 +1,9 @@
 .collections-section {
-  background-color: var(--color-cream);
   padding: 48px 24px 56px;
+}
+
+.collections-homepage-wrap {
+  background-color: var(--color-cream);
 }
 
 .collections-title {

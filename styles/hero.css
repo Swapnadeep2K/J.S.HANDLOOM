@@ -29,6 +29,18 @@
     border-color: #3a001e;
 }
 
+.hero .hero-button-alt {
+  background-color: #fff;
+  border: 3px solid #fff;
+  color: #3a001e;
+  font-weight: bold;
+}
+
+.hero .hero-button-alt:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
 @media only screen and (max-width: 768px) {
     .hero {
       text-align: center;

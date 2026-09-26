@@ -252,10 +252,65 @@
   color: var(--color-cream);
 }
 
+/* ============================================================
+   Policy pages (shipping, returns)
+   ============================================================ */
+.policy-section {
+  background-color: var(--color-white);
+  padding: 56px 24px;
+}
+
+.policy-section--alt {
+  background-color: var(--color-cream);
+}
+
+.policy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.policy-item {
+  background-color: var(--color-cream);
+  border: 1px solid #e3ddc9;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  border-left: 4px solid var(--color-maroon-900);
+}
+
+.policy-section--alt .policy-item {
+  background-color: var(--color-white);
+}
+
+.policy-item h3 {
+  font-family: var(--font-brand);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  margin: 0 0 8px;
+}
+
+.policy-item p {
+  font-family: var(--font-brand);
+  font-size: 13.5px;
+  color: var(--color-text-light);
+  line-height: 1.75;
+  margin: 0;
+}
+
+.policy-item a {
+  color: var(--color-maroon-900);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
 /* Responsive */
 @media (max-width: 860px) {
   .about-pillars-grid,
-  .about-steps-grid {
+  .about-steps-grid,
+  .policy-grid {
     grid-template-columns: 1fr;
     max-width: 480px;
     margin: 0 auto;
