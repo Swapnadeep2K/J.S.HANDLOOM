@@ -48,5 +48,10 @@
     "name": "Cotton",
     "slug": "cotton",
     "code": "COT"
+  },
+  {
+    "name": "Mixed",
+    "slug": "mixed",
+    "code": "MIX"
   }
 ]
