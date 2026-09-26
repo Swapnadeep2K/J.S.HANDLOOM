@@ -143,5 +143,24 @@
       "images/products/jsh-mus-00000008-pink-2.jpg"
     ],
     "whatsappMessage": "Hi, I'm interested in the Exclusive Handloom Pure Cotton Monipuri Saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "JSH-COT-00000009-PINK",
+    "slug": "exclusive-handloom-pure-cotton-monipuri-saree",
+    "name": "Exclusive Handloom Pure Cotton Monipuri Saree",
+    "category": "Mixed",
+    "categorySlug": "mixed",
+    "colour": "Pink",
+    "work": "Resham Work",
+    "availability": "In Stock",
+    "isFeatured": true,
+    "price": "Price on enquiry",
+    "description": "An exquisite pink pure cotton Monipuri handloom saree featuring all-over traditional woven motifs and a contrast border.",
+    "fabricDetails": "Crafted from fine-quality pure cotton yarn, this traditional Monipuri handloom saree features intricate woven motifs across the body and a distinctive patterned border. It comes with a running blouse piece for a complete ethnic ensemble. Dry clean only to preserve the delicate weave and vibrant colour.",
+    "images": [
+      "images/products/jsh-cot-00000009-pink-1.jpg",
+      "images/products/jsh-cot-00000009-pink-2.jpg"
+    ],
+    "whatsappMessage": "Hi, I'm interested in the Exclusive Handloom Pure Cotton Monipuri Saree. Could you share more details and pricing?"
   }
 ]
