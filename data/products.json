@@ -13,7 +13,10 @@
     "description": "Placeholder description for Category A, Style 1.",
     "fabricDetails": "Placeholder fabric details for Category A, Style 1.",
     "images": [
-      "https://placehold.co/400x400/3a001e/ede9d0?text=Category+A"
+      "https://placehold.co/400x400/3a001e/ede9d0?text=Category+A1",
+      "https://placehold.co/400x400/3a001e/ede9d0?text=Category+A2",
+      "https://placehold.co/400x400/3a001e/ede9d0?text=Category+A3",
+      "https://placehold.co/400x400/3a001e/ede9d0?text=Category+A4"
     ],
     "whatsappMessage": "Hi, I'm interested in the Category A (Style 1) saree. Could you share more details and pricing?"
   },
