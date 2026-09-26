@@ -1,0 +1,188 @@
+/* ============================================================
+   Trust Strip
+   ============================================================ */
+.trust-strip {
+  background-color: var(--color-maroon-900);
+  padding: 12px 24px;
+}
+
+.trust-strip-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  flex-wrap: wrap;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-cream);
+  font-family: var(--font-brand);
+  font-size: 12.5px;
+  white-space: nowrap;
+}
+
+.trust-item svg {
+  width: 17px;
+  height: 17px;
+  flex-shrink: 0;
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .trust-strip-inner {
+    gap: 14px 24px;
+  }
+  .trust-item {
+    font-size: 11.5px;
+  }
+}
+
+/* ============================================================
+   Brand Story Teaser
+   ============================================================ */
+.brand-story {
+  background-color: var(--color-cream);
+  padding: 56px 24px;
+}
+
+.brand-story-inner {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.brand-story-eyebrow {
+  font-family: var(--font-brand);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-brown);
+  margin: 0 0 8px;
+}
+
+.brand-story-heading {
+  font-family: var(--font-brand);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  margin: 0 0 16px;
+  line-height: 1.35;
+}
+
+.brand-story-body {
+  font-family: var(--font-brand);
+  font-size: 14.5px;
+  color: var(--color-text-light);
+  line-height: 1.75;
+  margin: 0 0 24px;
+}
+
+.brand-story-link {
+  display: inline-block;
+  font-family: var(--font-brand);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  text-decoration: none;
+  border-bottom: 2px solid var(--color-maroon-900);
+  padding-bottom: 2px;
+  transition: opacity 0.15s ease;
+}
+
+.brand-story-link:hover {
+  opacity: 0.65;
+}
+
+@media (max-width: 640px) {
+  .brand-story {
+    padding: 40px 20px;
+  }
+  .brand-story-heading {
+    font-size: 20px;
+  }
+}
+
+/* ============================================================
+   Testimonials — static 3-card grid
+   ============================================================ */
+.testimonials-section {
+  padding: 56px 24px;
+  background-color: var(--color-white);
+}
+
+.testimonials-title {
+  font-family: var(--font-brand);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  text-align: center;
+  margin: 0 0 32px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background-color: var(--color-cream);
+  border: 1px solid #e3ddc9;
+  border-radius: var(--radius-md);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.testimonial-openquote {
+  font-size: 40px;
+  line-height: 1;
+  color: var(--color-maroon-900);
+  opacity: 0.3;
+  font-family: Georgia, serif;
+  margin: 0;
+  display: block;
+}
+
+.testimonial-quote {
+  font-family: var(--font-brand);
+  font-size: 14px;
+  color: var(--color-text-dark);
+  line-height: 1.7;
+  margin: 0;
+  flex: 1;
+}
+
+.testimonial-author {
+  font-family: var(--font-brand);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  margin: 0;
+}
+
+.testimonial-via {
+  font-weight: 400;
+  color: var(--color-text-light);
+}
+
+@media (max-width: 860px) {
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+  }
+}
+
+@media (max-width: 640px) {
+  .testimonials-section {
+    padding: 40px 20px;
+  }
+}
