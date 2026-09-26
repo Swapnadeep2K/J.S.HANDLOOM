@@ -70,7 +70,7 @@
     "colour": "Maroon",
     "work": "Resham Work",
     "availability": "In Stock",
-    "isFeatured": true,
+    "isFeatured": false,
     "price": "Price on enquiry",
     "description": "Deep maroon matka silk saree with a dramatic woven chevron feather border and pallu.",
     "fabricDetails": "Crafted in rich matka silk with a characteristic slubby texture and natural sheen, this saree features an intricately woven chevron feather motif running through the border and pallu in a warm gold-rose resham. The bold geometric weave pattern creates a striking contrast against the deep maroon body. Dry clean only to preserve the woven border detail.",
@@ -79,7 +79,7 @@
     ],
     "whatsappMessage": "Hi, I'm interested in the Maroon Matka Silk Saree with Chevron Feather Border. Could you share more details and pricing?",
     "createdAt": "2026-09-26T06:00:00Z",
-    "updatedAt": "2026-09-26T06:00:00Z"
+    "updatedAt": "2026-09-26T20:03:25Z"
   },
   {
     "id": "JSH-MTK-00000001-MAGENTA",
