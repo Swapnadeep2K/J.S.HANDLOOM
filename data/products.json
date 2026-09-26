@@ -58,5 +58,23 @@
     "price": "Price on enquiry",
     "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Category+C",
     "whatsappMessage": "Hi, I'm interested in the Category C (Style 2) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "white-silk-saree-with-blue-floral-hand-paint",
+    "slug": "white-silk-saree-with-blue-floral-hand-paint",
+    "name": "White Silk Saree with Blue Floral Hand-Paint",
+    "category": "Category A",
+    "categorySlug": "category-a",
+    "colour": "White",
+    "work": "Hand-painted",
+    "availability": "In Stock",
+    "isFeatured": true,
+    "price": "Price on enquiry",
+    "description": "An elegant white silk saree featuring vibrant blue floral motifs and golden-yellow leaf details.",
+    "fabricDetails": "Crafted from fine silk fabric, this saree showcases detailed artistic floral prints complemented by a striking blue border. Dry clean only to preserve the brightness of the colours and fabric quality.",
+    "images": [
+      "images/products/white-silk-saree-with-blue-floral-hand-paint-1.jpg"
+    ],
+    "whatsappMessage": "Hi, I'm interested in the White Silk Saree with Blue Floral Hand-Paint. Could you share more details and pricing?"
   }
 ]
