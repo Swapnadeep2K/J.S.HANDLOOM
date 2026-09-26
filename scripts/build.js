@@ -288,8 +288,17 @@ function processIncludes(html) {
 
 function processProducts(html) {
   html = html.replace(/<!--#products(?:\s+limit=(\d+))?-->/g, (match, limitStr) => {
-    const limit = limitStr ? parseInt(limitStr, 10) : products.length;
-    return products.slice(0, limit).map(renderCard).join("\n");
+    if (limitStr) {
+      const limit = parseInt(limitStr, 10);
+      const sorted = [...products].sort((a, b) => {
+        if (!a.updatedAt && !b.updatedAt) return 0;
+        if (!a.updatedAt) return 1;
+        if (!b.updatedAt) return -1;
+        return new Date(b.updatedAt) - new Date(a.updatedAt);
+      });
+      return sorted.slice(0, limit).map(renderCard).join("\n");
+    }
+    return products.map(renderCard).join("\n");
   });
   html = html.replace(/<!--#category-filters-->/g, () => renderFilterChips(products));
   html = html.replace(/<!--#collections-->/g, () => renderCollectionCards());
