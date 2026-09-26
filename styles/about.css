@@ -1,118 +1,285 @@
-/* Banner overrides for about/info pages */
-.banner {
-  background-color: #ede9d0;
-  padding: 40px 2rem;
+/* ============================================================
+   About / Our Story page
+   ============================================================ */
+
+/* Hero */
+.about-hero {
+  background-color: var(--color-maroon-900);
+  padding: 64px 24px 56px;
+  text-align: center;
 }
 
-.banner-text h2 {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #3a001e;
-  margin-bottom: 10px;
-}
-
-.banner-text p {
-  color: #5a3040;
-  font-size: 1rem;
-}
-
-/* Content sections */
-.about-section {
-  padding: 3rem 2rem;
-  background-color: #fff;
-}
-
-.about-section h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #3a001e;
-  margin-bottom: 1.5rem;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
-  max-width: 960px;
-}
-
-.about-item {
-  background-color: #faf8f2;
-  border: 1px solid #e8e0cc;
-  border-radius: 8px;
-  padding: 1.25rem 1.5rem;
-}
-
-.about-item h4 {
-  font-size: 1rem;
-  font-weight: 600;
-  color: #3a001e;
-  margin-bottom: 0.5rem;
-}
-
-.about-item p {
-  font-size: 0.9rem;
-  color: #555;
-  line-height: 1.6;
-}
-
-.about-item a {
-  color: #3a001e;
-  font-weight: 600;
-  text-decoration: underline !important;
-}
-
-/* Process section */
-.process-section {
-  padding: 3rem 2rem;
-  background-color: #ede9d0;
-}
-
-.process-section h3 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #3a001e;
-  margin-bottom: 1.5rem;
-}
-
-.process-steps {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.process-step {
-  flex: 1 1 180px;
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 1.25rem 1.5rem;
-  border-left: 4px solid #3a001e;
-}
-
-.process-step h4 {
-  font-size: 0.85rem;
-  font-weight: 700;
-  color: #3a001e;
+.about-eyebrow {
+  font-family: var(--font-brand);
+  font-size: 11px;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  letter-spacing: 0.04em;
-  margin-bottom: 0.4rem;
+  color: var(--color-cream);
+  opacity: 0.7;
+  margin: 0 0 12px;
 }
 
-.process-step p {
-  font-size: 0.9rem;
-  color: #555;
+.about-hero-heading {
+  font-family: var(--font-brand);
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--color-cream);
+  margin: 0 0 16px;
+  line-height: 1.2;
 }
 
-@media only screen and (max-width: 768px) {
-  .about-grid {
+.about-hero-sub {
+  font-family: var(--font-brand);
+  font-size: 15px;
+  color: var(--color-cream);
+  opacity: 0.85;
+  max-width: 680px;
+  margin: 0 auto;
+  line-height: 1.75;
+}
+
+/* Brand story — two columns */
+.about-story {
+  background-color: var(--color-white);
+  padding: 56px 24px;
+}
+
+.about-story-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-story-block h2 {
+  font-family: var(--font-brand);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  margin: 0 0 14px;
+}
+
+.about-story-block p {
+  font-family: var(--font-brand);
+  font-size: 14px;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin: 0 0 12px;
+}
+
+.about-story-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Section title shared */
+.about-section-title {
+  font-family: var(--font-brand);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  text-align: center;
+  margin: 0 0 36px;
+}
+
+/* Pillars — 3 cards */
+.about-pillars {
+  background-color: var(--color-cream);
+  padding: 56px 24px;
+}
+
+.about-pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-pillar {
+  background-color: var(--color-white);
+  border: 1px solid #e3ddc9;
+  border-radius: var(--radius-md);
+  padding: 28px 24px;
+}
+
+.about-pillar-icon {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-maroon-900);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  color: var(--color-cream);
+}
+
+.about-pillar-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.about-pillar h3 {
+  font-family: var(--font-brand);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  margin: 0 0 10px;
+}
+
+.about-pillar p {
+  font-family: var(--font-brand);
+  font-size: 13.5px;
+  color: var(--color-text-light);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* How to buy — 3 steps */
+.about-steps {
+  background-color: var(--color-white);
+  padding: 56px 24px;
+}
+
+.about-steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.about-step {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.about-step-num {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-maroon-900);
+  color: var(--color-cream);
+  font-family: var(--font-brand);
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.about-step h3 {
+  font-family: var(--font-brand);
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  margin: 0;
+}
+
+.about-step p {
+  font-family: var(--font-brand);
+  font-size: 13.5px;
+  color: var(--color-text-light);
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* CTA */
+.about-cta {
+  background-color: var(--color-cream);
+  padding: 56px 24px;
+  text-align: center;
+}
+
+.about-cta h2 {
+  font-family: var(--font-brand);
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  margin: 0 0 10px;
+}
+
+.about-cta p {
+  font-family: var(--font-brand);
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin: 0 0 28px;
+}
+
+.about-cta-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.about-cta-primary {
+  font-family: var(--font-brand);
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--color-maroon-900);
+  color: var(--color-cream);
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  transition: opacity 0.15s ease;
+}
+
+.about-cta-primary:hover {
+  opacity: 0.88;
+}
+
+.about-cta-secondary {
+  font-family: var(--font-brand);
+  font-size: 14px;
+  font-weight: 600;
+  background-color: var(--color-white);
+  color: var(--color-maroon-900);
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--color-maroon-900);
+  transition: background-color 0.15s ease;
+}
+
+.about-cta-secondary:hover {
+  background-color: var(--color-maroon-900);
+  color: var(--color-cream);
+}
+
+/* Responsive */
+@media (max-width: 860px) {
+  .about-pillars-grid,
+  .about-steps-grid {
     grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 680px) {
+  .about-story-inner {
+    grid-template-columns: 1fr;
+    gap: 32px;
   }
 
-  .banner-text h2 {
-    font-size: 1.6rem;
+  .about-hero-heading {
+    font-size: 28px;
   }
 
-  .process-steps {
-    flex-direction: column;
+  .about-hero {
+    padding: 48px 20px 40px;
+  }
+
+  .about-story,
+  .about-pillars,
+  .about-steps,
+  .about-cta {
+    padding: 40px 20px;
   }
 }
