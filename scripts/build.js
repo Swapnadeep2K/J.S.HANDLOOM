@@ -105,9 +105,18 @@ function adjustPathsForSubdir(html) {
 }
 
 function renderPDP(product) {
-  const similar = products
-    .filter(p => p.categorySlug === product.categorySlug && p.slug !== product.slug)
-    .slice(0, 4);
+  // Colour variant siblings (same parentId, excluding self)
+  const siblings = product.parentId
+    ? products.filter(p => p.parentId === product.parentId && p.slug !== product.slug)
+    : [];
+
+  // Similar sarees: same category, non-siblings first, siblings appended at end
+  const siblingIds = new Set(siblings.map(p => p.slug));
+  const sameCategory = products.filter(p => p.categorySlug === product.categorySlug && p.slug !== product.slug);
+  const similar = [
+    ...sameCategory.filter(p => !siblingIds.has(p.slug)),
+    ...sameCategory.filter(p => siblingIds.has(p.slug)),
+  ].slice(0, 4);
 
   const name         = escapeHtml(product.name);
   const category     = escapeHtml(product.category);
@@ -135,6 +144,19 @@ function renderPDP(product) {
     ? `<span class="pdp-tag">${colour}</span>` : "";
   const workTag = work && work !== "TBD"
     ? `<span class="pdp-tag">${work}</span>` : "";
+
+  const siblingsHtml = siblings.length > 0
+    ? `<div class="pdp-variants">
+        <p class="pdp-variants-label">Also available in:</p>
+        <div class="pdp-variants-row">
+          ${siblings.map(s =>
+            `<a href="${escapeHtml(s.slug)}.html" class="pdp-variant" title="${escapeHtml(s.colour)} – ${escapeHtml(s.name)}">
+              <img src="../${escapeHtml(s.images[0])}" alt="${escapeHtml(s.colour)}" loading="lazy" />
+            </a>`
+          ).join("\n")}
+        </div>
+      </div>`
+    : "";
 
   const similarHtml = similar.length > 0
     ? `<section class="pdp-similar">
@@ -203,6 +225,7 @@ function renderPDP(product) {
           ${colourTag}
           ${workTag}
         </div>
+        ${siblingsHtml}
         <p class="pdp-price">${price}</p>
         <p class="pdp-fabric-details">${fabricDetails}</p>
         <a class="pdp-cta" href="${whatsappHref}" target="_blank" rel="noopener noreferrer">

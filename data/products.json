@@ -19,6 +19,7 @@
   },
   {
     "id": "JSH-MTK-00000001-RED",
+    "parentId": "JSH-MTK-00000001",
     "slug": "red-matka-silk-saree-woven-booti-border",
     "name": "Red Matka Silk Saree with Woven Booti Border",
     "category": "Matka Silk",
@@ -54,7 +55,8 @@
     "whatsappMessage": "Hi, I'm interested in the Brown Muslin Saree with Woven Stripe Border. Could you share more details and pricing?"
   },
   {
-    "id": "JSH-MTK-00000002-MAROON",
+    "id": "JSH-MTK-00000001-MAROON",
+    "parentId": "JSH-MTK-00000001",
     "slug": "maroon-matka-silk-saree-chevron-feather-border",
     "name": "Maroon Matka Silk Saree with Chevron Feather Border",
     "category": "Matka Silk",
@@ -67,12 +69,13 @@
     "description": "Deep maroon matka silk saree with a dramatic woven chevron feather border and pallu.",
     "fabricDetails": "Crafted in rich matka silk with a characteristic slubby texture and natural sheen, this saree features an intricately woven chevron feather motif running through the border and pallu in a warm gold-rose resham. The bold geometric weave pattern creates a striking contrast against the deep maroon body. Dry clean only to preserve the woven border detail.",
     "images": [
-      "images/products/jsh-mtk-00000002-maroon-1.jpg"
+      "images/products/jsh-mtk-00000001-maroon-1.jpg"
     ],
     "whatsappMessage": "Hi, I'm interested in the Maroon Matka Silk Saree with Chevron Feather Border. Could you share more details and pricing?"
   },
   {
-    "id": "JSH-MTK-00000003-MAGENTA",
+    "id": "JSH-MTK-00000001-MAGENTA",
+    "parentId": "JSH-MTK-00000001",
     "slug": "magenta-matka-silk-saree-chevron-feather-border",
     "name": "Magenta Matka Silk Saree with Chevron Feather Border",
     "category": "Matka Silk",
@@ -85,7 +88,7 @@
     "description": "Vibrant magenta matka silk saree with a wide woven chevron feather border and pallu.",
     "fabricDetails": "Woven in textured matka silk with a vivid magenta body, this saree carries the same bold chevron feather weave as its maroon counterpart — making it part of a signature J.S. Handloom design available in multiple colourways. The rose-gold resham border and heavy woven pallu make it ideal for festive and evening occasions. Dry clean only.",
     "images": [
-      "images/products/jsh-mtk-00000003-magenta-1.jpg"
+      "images/products/jsh-mtk-00000001-magenta-1.jpg"
     ],
     "whatsappMessage": "Hi, I'm interested in the Magenta Matka Silk Saree with Chevron Feather Border. Could you share more details and pricing?"
   },
@@ -108,7 +111,8 @@
     "whatsappMessage": "Hi, I'm interested in the Orange Murshidabad Silk Saree with Gold Zari Border. Could you share more details and pricing?"
   },
   {
-    "id": "JSH-MTK-00000004-BROWN",
+    "id": "JSH-MTK-00000001-BROWN",
+    "parentId": "JSH-MTK-00000001",
     "slug": "brown-matka-silk-saree-woven-resham-leaf-booti",
     "name": "Brown Matka Silk Saree with Woven Resham Leaf and Booti",
     "category": "Matka Silk",
@@ -121,7 +125,7 @@
     "description": "Warm brown matka silk saree with woven resham leaf motifs and a scattered booti border.",
     "fabricDetails": "Woven in rich brown matka silk with a natural slubby texture, this saree features hand-woven resham leaf-and-bud motifs in cream and red along the body, and woven circular bootis in a contrasting gold-beige on the dark stripe border. The two-tone brown body — warm mahogany transitioning to deep espresso at the border — gives it a distinctive depth. Dry clean only.",
     "images": [
-      "images/products/jsh-mtk-00000004-brown-1.jpg"
+      "images/products/jsh-mtk-00000001-brown-1.jpg"
     ],
     "whatsappMessage": "Hi, I'm interested in the Brown Matka Silk Saree with Woven Resham Leaf and Booti. Could you share more details and pricing?"
   },
