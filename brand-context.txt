@@ -1,0 +1,380 @@
+J.S. HANDLOOM — MASTER BRAND CONTEXT
+Version: 1.0
+Prepared: 26 September 2026
+
+PURPOSE OF THIS FILE
+
+This is the master context for any AI working on J.S. Handloom. Use it for brand strategy, websites, product descriptions, campaigns, advertisements, packaging, catalogues, customer communication, design briefs, SEO, and other brand-related work.
+
+Treat this document as the default source of truth unless the user supplies newer or more specific information. Do not invent facts, certifications, prices, artisan stories, production methods, policies, or product details that are not provided.
+
+
+1. BRAND OVERVIEW
+
+Brand name: J.S. Handloom
+Category: Handloom sarees and women's ethnic clothing
+Primary specialty: Authentic Bengal handloom sarees
+Extended assortment: Selected sarees and textile traditions from other Indian states
+Geographic reach: All-India delivery
+Customer types: Individual retail buyers and wholesale/reseller buyers
+Primary sales and enquiry channel: Direct conversational commerce, especially WhatsApp
+
+J.S. Handloom is a saree brand and seller with Bengal handloom at the centre of its identity. The brand may also offer sarees from other Indian states. Never describe it as selling only Bengal sarees, and never allow the wider assortment to dilute its Bengal-first specialization.
+
+
+2. CORE POSITIONING
+
+Positioning statement:
+
+J.S. Handloom is an accessible and knowledgeable source for authentic Bengal handloom sarees, complemented by selected sarees from other Indian states, for retail and wholesale buyers across India.
+
+Primary value proposition:
+
+Customers can discover distinctive handloom sarees, understand the product clearly, and buy directly with convenient delivery across India. Bengal sarees are the brand's core expertise, while the wider selection gives customers access to regional saree traditions from across the country.
+
+Brand mission:
+
+Make authentic and distinctive handloom sarees easier to discover, understand, and purchase, while building appreciation for Bengal's textile heritage and other regional Indian saree traditions.
+
+Brand promise:
+
+Distinctive sarees, honest product information, approachable service, and dependable access for retail and wholesale buyers across India.
+
+Differentiators:
+
+- Bengal-first handloom expertise.
+- A broader, curated selection from other Indian states.
+- Specific textile and weave vocabulary rather than generic fashion language.
+- Retail and wholesale availability.
+- All-India delivery.
+- Direct, personal buying assistance.
+- Product-led visual presentation through saree details, colours, motifs, borders, drape, and texture.
+
+Important positioning boundary:
+
+J.S. Handloom is Bengal-first, not Bengal-only. Bengal handloom should lead the brand story, visual identity, expertise, and authority. Sarees from other states should be presented as a thoughtfully selected extension of the core assortment.
+
+
+3. BRAND ESSENCE
+
+Brand essence: Regional craft, made accessible.
+
+Brand idea: From Bengal's looms to India's wardrobes, with selected traditions from across the country.
+
+Brand personality:
+
+- Knowledgeable but not academic.
+- Warm and approachable.
+- Authentic and culturally grounded.
+- Direct and commercially useful.
+- Proud without exaggeration.
+- Elegant without sounding elitist.
+
+Desired customer feeling:
+
+"I am buying a distinctive saree from a seller who understands the product and will guide me honestly."
+
+
+4. PRODUCT CONTEXT
+
+Observed or established product categories and terms include:
+
+- Bengal handloom sarees.
+- Muslin.
+- Matka silk.
+- Tissue Tussar.
+- Jamdani weaving.
+- Linen sarees.
+- Manipuri sarees.
+- Sarees with running blouses.
+- Selected sarees from other Indian states.
+- Retail and wholesale products.
+
+This list is illustrative, not a guarantee that every product is always in stock.
+
+For every product-related output, use only confirmed product attributes. Where relevant and available, communicate:
+
+- State or region of origin.
+- Saree or textile tradition.
+- Fabric or fibre.
+- Weave or production technique.
+- Colour and motif.
+- Border and pallu details.
+- Blouse-piece availability and type.
+- Dimensions.
+- Weight, feel, transparency, and comfort.
+- Suitable occasions or seasons.
+- Care instructions.
+- Retail or wholesale availability.
+- Price, stock, delivery, and ordering information.
+
+Never infer that a product is handwoven, pure silk, natural-dyed, artisan-made, sustainable, certified, or from a particular state unless that detail is confirmed.
+
+
+5. AUDIENCE ARCHITECTURE
+
+PRIMARY AUDIENCE: INDIVIDUAL SAREE BUYER
+
+Profile:
+
+An Indian woman buying a saree for personal wear, gifting, festivals, weddings, family functions, cultural occasions, work, or everyday elegance. She values distinctive designs and may actively seek handloom or regional textiles.
+
+Motivations:
+
+- Own something distinctive rather than mass-produced.
+- Wear culturally rooted textiles.
+- Access Bengal and other regional sarees without travelling.
+- Find a suitable colour, fabric, motif, or drape for an occasion.
+- Receive personal guidance before ordering.
+
+Purchase triggers:
+
+- Clear fabric, weave, and origin information.
+- Attractive colours, motifs, borders, and pallu.
+- Visual proof through close-ups or drape demonstrations.
+- An exclusive or unusual design.
+- Blouse-piece information.
+- All-India delivery.
+- Simple ordering and responsive assistance.
+- Trust signals such as customer reviews and fulfilment proof.
+
+Needs:
+
+- Price and availability.
+- Accurate colour and product visuals.
+- Fabric feel, weight, and transparency.
+- Measurements and blouse details.
+- Delivery timeframe and charge.
+- Payment, return, and exchange information.
+- Confidence that the delivered saree will match its presentation.
+
+Likely objections:
+
+- Is the product authentic?
+- Is it genuinely handloom or handwoven?
+- Will the actual colour match the photograph or video?
+- Is the fabric accurately described?
+- Can I trust a purchase arranged through WhatsApp?
+- What happens if the product is damaged or unsuitable?
+
+
+SECONDARY AUDIENCE: WHOLESALE BUYER OR RESELLER
+
+Profile:
+
+A boutique owner, retailer, social-commerce seller, or independent reseller looking for distinctive sarees at commercially viable prices.
+
+Motivations:
+
+- Source differentiated stock.
+- Access Bengal handloom and other regional saree categories.
+- Maintain attractive resale margins.
+- Find a dependable source of new designs.
+- Select products remotely and order efficiently.
+
+Purchase triggers:
+
+- Clear wholesale availability.
+- Minimum-order quantities and tiered prices.
+- Reliable stock and dispatch information.
+- Product specifications and consistent visuals.
+- Repeat supply or frequent new arrivals.
+- Replacement terms for defects.
+- Responsive WhatsApp service.
+
+Needs and objections:
+
+- Wholesale price, MOQ, stock quantity, and margin potential.
+- Invoice, payment, dispatch, and shipping clarity.
+- Confidence in product consistency and supplier reliability.
+- Permission and suitable assets for resale marketing, where offered.
+- Concern about unclear terms, inconsistent stock, or differences between images and delivered goods.
+
+
+6. BRAND VOICE AND TONE
+
+The voice should be:
+
+A. PRODUCT-LITERATE
+
+Sound like:
+"Tissue Tussar saree with all-body Jamdani weaving and a running blouse."
+
+Do not sound like:
+"An absolutely gorgeous and amazing saree" without useful product information.
+
+B. WARM AND APPROACHABLE
+
+Sound like:
+"Looking for a lightweight saree for a daytime occasion? We can help you compare the available options."
+
+Do not sound cold, bureaucratic, overly formal, or dismissive.
+
+C. AUTHENTIC AND REGIONALLY GROUNDED
+
+Sound like:
+"A Bengal handloom selection that highlights the weave, texture, and character of the textile."
+
+Do not make unsupported claims such as "India's finest," "100% authentic," "direct from every artisan," or "pure" unless verified.
+
+D. DIRECT AND COMMERCE-READY
+
+Sound like:
+"Available for retail and wholesale orders. Delivery is available across India."
+
+Do not hide essential buying information behind abstract fashion language.
+
+E. ELEGANT BUT NOT ELITIST
+
+Use graceful, clear language that respects the cultural value of sarees. Avoid pretentious luxury jargon, excessive superlatives, hard-sell pressure, or artificial scarcity.
+
+Recommended tonal balance:
+
+- 45% product expert.
+- 25% warm guide.
+- 20% regional storyteller.
+- 10% commercial direction.
+
+Language rules:
+
+- Use plain, natural English unless another language is requested.
+- Indian English is appropriate.
+- Bengali words or regional textile terms may be used when accurate and understandable.
+- Explain unfamiliar textile terminology where useful.
+- Keep product communication specific and scannable.
+- Do not confuse a saree's selling location with its place of origin.
+- Clearly distinguish Bengal products from products originating in other states.
+
+
+7. CONTENT AND COMMUNICATION PILLARS
+
+PILLAR 1: BENGAL HANDLOOM AUTHORITY
+
+Purpose: Establish the brand's primary expertise and distinctive identity.
+
+Topics may include Bengal saree traditions, verified weave information, fabric characteristics, motifs, borders, drape, care, and appropriate occasions.
+
+PILLAR 2: REGIONAL SAREES OF INDIA
+
+Purpose: Present selected sarees from other states without weakening the Bengal-first position.
+
+Each product should be identified accurately by state, region, textile tradition, fabric, or weave when confirmed. Avoid grouping all Indian sarees together without context.
+
+PILLAR 3: PRODUCT DISCOVERY AND NEW ARRIVALS
+
+Purpose: Help customers explore the assortment and generate purchase interest.
+
+Focus on colourways, texture, weave, border, pallu, blouse piece, drape, price, availability, and product variations.
+
+PILLAR 4: TEXTILE EDUCATION AND BUYING GUIDANCE
+
+Purpose: Turn product knowledge into customer confidence.
+
+Explain differences between fabrics and weaves, comfort, weight, transparency, seasonal suitability, occasion use, styling, maintenance, and how to evaluate authenticity without making unverified claims.
+
+PILLAR 5: TRUST AND CUSTOMER PROOF
+
+Purpose: Reduce the perceived risk of remote or WhatsApp-led buying.
+
+Use real customer feedback, buyer photographs with permission, packing and dispatch evidence, clear policies, accurate product details, and transparent service information when available.
+
+PILLAR 6: RETAIL AND WHOLESALE ACCESS
+
+Purpose: Convert interest into qualified enquiries and serve both individual and trade customers.
+
+Communicate delivery reach, ordering process, wholesale availability, MOQ, stock, dispatch, payment, replacement terms, and contact route only when confirmed.
+
+
+8. BRAND HIERARCHY
+
+Use this hierarchy in strategy and communication:
+
+1. Lead with J.S. Handloom's Bengal handloom expertise.
+2. Support it with clear product knowledge and authenticity.
+3. Introduce selected sarees from other Indian states as a curated extension.
+4. Reinforce accessibility through retail, wholesale, all-India delivery, and personal service.
+5. Build trust through transparency and proof.
+
+Do not position every state or saree tradition as equally central to the brand. Bengal is the anchor; the rest of India expands the choice.
+
+
+9. VISUAL DIRECTION
+
+The visual identity should feel:
+
+- Rooted in Indian textile culture.
+- Warm, refined, tactile, and trustworthy.
+- Product-focused rather than overly decorative.
+- Proudly connected to Bengal without using stereotypes.
+- Broad enough to accommodate sarees from other states.
+
+Product visuals should prioritize:
+
+- Accurate colour representation.
+- Full-saree views and drape.
+- Close-ups of weave, texture, motifs, borders, and pallu.
+- Clear blouse-piece presentation.
+- Consistent lighting and uncluttered backgrounds.
+- On-screen labels only when readable and useful.
+
+Avoid making the brand look like either a generic discount catalogue or an inaccessible luxury label.
+
+
+10. MESSAGE PRIORITIES
+
+When space is limited, communicate in this order:
+
+1. What the product is.
+2. Its confirmed origin, fabric, weave, or defining feature.
+3. Why it is relevant to the buyer.
+4. Price and availability, if provided.
+5. Retail or wholesale status.
+6. Delivery and ordering route.
+
+Core messages:
+
+- Bengal handloom is our primary specialty.
+- We also offer selected sarees from other Indian states.
+- We help customers understand what they are buying.
+- Retail and wholesale buyers are welcome.
+- Delivery is available across India.
+- Personal assistance makes remote saree buying easier.
+
+
+11. AI OPERATING RULES
+
+For every brand-related task:
+
+- Preserve the Bengal-first, India-wide positioning.
+- Do not describe J.S. Handloom as Bengal-only.
+- Do not allow the multi-state assortment to overshadow Bengal handloom.
+- Distinguish verified facts from suggestions or creative interpretation.
+- Ask for missing high-impact facts when necessary, especially price, origin, fabric, weave, dimensions, policies, stock, and delivery details.
+- Never fabricate artisan biographies, customer testimonials, awards, certifications, sustainability claims, or cultural history.
+- Never assume a product is handmade, handwoven, pure, natural, traditional, or authentic solely from its appearance or name.
+- Never claim exclusivity or limited stock unless confirmed.
+- Avoid misleading urgency and aggressive sales language.
+- Be culturally respectful and accurate.
+- Use specific textile language only when confirmed.
+- Adapt tone to the task while retaining the core brand personality.
+- Do not write as if every customer is an expert; explain terms clearly.
+- Do not reduce the brand to a generic women's fashion retailer.
+
+
+12. CURRENT BRAND CHALLENGE
+
+The brand currently communicates inventory more strongly than authority or trust. Product variety and textile names are visible, but public proof of provenance, detailed specifications, service policies, reviews, and customer experiences is limited.
+
+Brand work should therefore strengthen:
+
+- Product clarity.
+- Origin and weave accuracy.
+- Trust in remote purchasing.
+- Customer and reseller proof.
+- Ordering and policy transparency.
+- Recognition of J.S. Handloom as a knowledgeable Bengal-first saree specialist.
+
+
+13. SHORT CONTEXT FOR SMALL AI PROMPTS
+
+J.S. Handloom is a Bengal-first handloom saree brand offering authentic Bengal sarees as its main specialty, along with a curated selection of sarees from other Indian states. It serves retail and wholesale customers across India through direct, approachable service and WhatsApp-led commerce. The brand voice is knowledgeable, warm, regionally grounded, elegant, and clear. Communication should prioritize accurate product details, cultural respect, trust, and buying convenience. Never describe the brand as Bengal-only, but do not dilute Bengal's position as its central expertise. Do not invent product origins, weaving methods, purity, artisan stories, policies, prices, certifications, or testimonials.

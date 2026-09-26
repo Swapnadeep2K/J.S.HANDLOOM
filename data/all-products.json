@@ -15,7 +15,7 @@
     "images": [
       "images/products/jsh-mus-00000001-yellow-1.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Yellow Muslin Saree with Floral Resham Work saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Yellow Muslin Saree with Floral Resham Work. Could you share more details and pricing?"
   },
   {
     "id": "JSH-MTK-00000001-RED",
@@ -33,7 +33,7 @@
     "images": [
       "images/products/jsh-mtk-00000001-red-1.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Red Matka Silk Saree with Woven Booti Border saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Red Matka Silk Saree with Woven Booti Border. Could you share more details and pricing?"
   },
   {
     "id": "JSH-MUS-00000002-BROWN",
@@ -51,7 +51,7 @@
     "images": [
       "images/products/jsh-mus-00000002-brown-1.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Brown Muslin Saree with Woven Stripe Border saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Brown Muslin Saree with Woven Stripe Border. Could you share more details and pricing?"
   },
   {
     "id": "JSH-MTK-00000002-MAROON",
@@ -69,7 +69,7 @@
     "images": [
       "images/products/jsh-mtk-00000002-maroon-1.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Maroon Matka Silk Saree with Chevron Feather Border saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Maroon Matka Silk Saree with Chevron Feather Border. Could you share more details and pricing?"
   },
   {
     "id": "JSH-MTK-00000003-MAGENTA",
@@ -87,7 +87,7 @@
     "images": [
       "images/products/jsh-mtk-00000003-magenta-1.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Magenta Matka Silk Saree with Chevron Feather Border saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Magenta Matka Silk Saree with Chevron Feather Border. Could you share more details and pricing?"
   },
   {
     "id": "JSH-MUR-00000001-ORANGE",
@@ -105,7 +105,7 @@
     "images": [
       "images/products/jsh-mur-00000001-orange-1.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Orange Murshidabad Silk Saree with Gold Zari Border saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Orange Murshidabad Silk Saree with Gold Zari Border. Could you share more details and pricing?"
   },
   {
     "id": "JSH-MTK-00000004-BROWN",
@@ -123,12 +123,12 @@
     "images": [
       "images/products/jsh-mtk-00000004-brown-1.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Brown Matka Silk Saree with Woven Resham Leaf and Booti saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Brown Matka Silk Saree with Woven Resham Leaf and Booti. Could you share more details and pricing?"
   },
   {
     "id": "JSH-COT-00000001-PINK",
-    "slug": "exclusive-handloom-pure-cotton-monipuri-saree",
-    "name": "Exclusive Handloom Pure Cotton Monipuri Saree",
+    "slug": "pink-monipuri-cotton-saree",
+    "name": "Pink Monipuri Cotton Saree",
     "category": "Cotton",
     "categorySlug": "cotton",
     "colour": "Pink",
@@ -142,6 +142,6 @@
       "images/products/jsh-cot-00000001-pink-1.jpg",
       "images/products/jsh-cot-00000001-pink-2.jpg"
     ],
-    "whatsappMessage": "Hi, I'm interested in the Exclusive Handloom Pure Cotton Monipuri Saree. Could you share more details and pricing?"
+    "whatsappMessage": "Hi, I'm interested in the Pink Monipuri Cotton Saree. Could you share more details and pricing?"
   }
 ]
