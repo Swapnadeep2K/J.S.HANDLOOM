@@ -57,13 +57,17 @@ const WHATSAPP_ICON = `<svg viewBox="0 0 448 512" xmlns="http://www.w3.org/2000/
 function renderCard(product) {
   const name = escapeHtml(product.name);
   const category = escapeHtml(product.category);
-  const slug = escapeHtml(product.categorySlug);
+  const categorySlug = escapeHtml(product.categorySlug);
+  const slug = escapeHtml(product.slug);
   const desc = escapeHtml(product.description);
   const price = escapeHtml(product.price);
-  const image = escapeHtml(product.image);
+  const image = escapeHtml(product.images[0]);
+  const colour = escapeHtml(product.colour || "");
+  const work = escapeHtml(product.work || "");
+  const availability = escapeHtml(product.availability || "");
   const href = whatsappUrl(product.whatsappMessage);
 
-  return `<div class="shop-card" data-category="${slug}">
+  return `<div class="shop-card" data-category="${categorySlug}" data-colour="${colour}" data-work="${work}" data-availability="${availability}">
   <div class="shop-card-image">
     <img src="${image}" alt="${name}" loading="lazy" width="400" height="400" />
   </div>
