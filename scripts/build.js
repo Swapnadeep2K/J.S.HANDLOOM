@@ -368,14 +368,26 @@ function renderCollectionCards() {
 </section>`;
 }
 
+function categoryMetaDescription(name, categoryProducts) {
+  const count = categoryProducts.length;
+  const colours = [...new Set(categoryProducts.map(p => p.colour).filter(v => v && v !== "TBD"))];
+  const colourStr = colours.length > 0
+    ? ` in ${colours.slice(0, 4).join(", ")}${colours.length > 4 ? " and more" : ""}`
+    : "";
+  return `Shop ${count} handwoven ${name} saree${count !== 1 ? "s" : ""} from J.S.HANDLOOM${colourStr}. Govt Silk Mark Certified. Enquire directly on WhatsApp.`;
+}
+
 function renderCategoryPage(slug, name, categoryProducts) {
   const safeName = escapeHtml(name);
   const safeSlug = escapeHtml(slug);
   const count = categoryProducts.length;
   const cardsHtml = categoryProducts
     .map(p => renderCard(p, { imgPrefix: "../", pdpDir: "../products/" }))
-
     .join("\n");
+  const metaDesc   = escapeHtml(categoryMetaDescription(name, categoryProducts));
+  const ogImage    = categoryProducts[0]
+    ? `https://swapnadeep2k.github.io/J.S.HANDLOOM/${escapeHtml(categoryProducts[0].images[0])}`
+    : "";
   const headerHtml = adjustPathsForSubdir(partials["header"] || "");
   const footerHtml = adjustPathsForSubdir(partials["footer"] || "");
   const widgetHtml = adjustPathsForSubdir(partials["support-widget"] || "");
@@ -386,10 +398,12 @@ function renderCategoryPage(slug, name, categoryProducts) {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${safeName} Sarees - J.S.HANDLOOM</title>
-    <meta name="description" content="Browse ${safeName} handloom sarees from J.S.HANDLOOM. Enquire directly on WhatsApp." />
+    <meta name="description" content="${metaDesc}" />
     <link rel="canonical" href="https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${safeSlug}.html" />
     <link rel="icon" href="../images/logo-orange.png" />
     <meta property="og:title" content="${safeName} Sarees - J.S.HANDLOOM" />
+    <meta property="og:description" content="${metaDesc}" />
+    ${ogImage ? `<meta property="og:image" content="${ogImage}" />` : ""}
     <meta property="og:type" content="website" />
     <link rel="stylesheet" href="../styles/tokens.css" />
     <link rel="stylesheet" href="../styles/general.css" />
