@@ -228,5 +228,28 @@
     "whatsappMessage": "Hi, I'm interested in the Navy Blue Linen Saree with Gold Border. Could you share more details and pricing?",
     "createdAt": "2026-09-26T20:06:46Z",
     "updatedAt": "2026-09-26T20:06:46Z"
+  },
+  {
+    "id": "JSH-COT-00000004-IVORY",
+    "slug": "ivory-monipuri-cotton-saree",
+    "name": "Ivory Monipuri Cotton Saree",
+    "category": "Cotton",
+    "categorySlug": "cotton",
+    "colour": "Ivory",
+    "work": "Resham Work",
+    "availability": "In Stock",
+    "isFeatured": false,
+    "price": "Price on enquiry",
+    "description": "This Ivory Monipuri cotton saree features vibrant floral vine motifs and contrasting borders.",
+    "fabricDetails": "This ivory saree is crafted from cotton featuring a textured weave with colourful woven floral vine motifs along the body. The borders display contrasting shades with geometric temple patterns. Dry clean only.",
+    "images": [
+      "images/products/jsh-cot-00000004-ivory-1.jpg",
+      "images/products/jsh-cot-00000004-ivory-2.jpg",
+      "images/products/jsh-cot-00000004-ivory-3.jpg",
+      "images/products/jsh-cot-00000004-ivory-4.jpg"
+    ],
+    "whatsappMessage": "Hi, I'm interested in the Ivory Monipuri Cotton Saree. Could you share more details and pricing?",
+    "createdAt": "2026-09-26T20:12:49Z",
+    "updatedAt": "2026-09-26T20:12:49Z"
   }
 ]
