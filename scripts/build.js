@@ -269,6 +269,7 @@ function processProducts(html) {
     return products.slice(0, limit).map(renderCard).join("\n");
   });
   html = html.replace(/<!--#category-filters-->/g, () => renderFilterChips(products));
+  html = html.replace(/<!--#collections-->/g, () => renderCollectionCards());
   return html;
 }
 
@@ -282,6 +283,118 @@ function copyDir(src, dest) {
     } else {
       fs.copyFileSync(srcPath, destPath);
     }
+  }
+}
+
+function renderCollectionCards() {
+  const seen = new Map();
+  for (const p of products) {
+    if (!seen.has(p.categorySlug)) {
+      seen.set(p.categorySlug, { name: p.category, image: p.images[0] });
+    }
+  }
+  let cards = "";
+  for (const [slug, { name, image }] of seen) {
+    const count = products.filter(p => p.categorySlug === slug).length;
+    const label = escapeHtml(name);
+    const imgSrc = escapeHtml(image);
+    const slugSafe = escapeHtml(slug);
+    cards += `<a class="collection-card" href="collections/${slugSafe}.html">
+  <div class="collection-card-image">
+    <img src="${imgSrc}" alt="${label}" loading="lazy" />
+  </div>
+  <div class="collection-card-body">
+    <h3 class="collection-card-name">${label}</h3>
+    <p class="collection-card-count">${count} ${count === 1 ? "saree" : "sarees"}</p>
+  </div>
+</a>\n`;
+  }
+  return `<section id="collections" class="collections-section">
+  <h2 class="collections-title">Shop by Collection</h2>
+  <p class="collections-sub">Explore our handloom sarees by weave and tradition.</p>
+  <div class="collections-grid">
+    ${cards.trim()}
+  </div>
+</section>`;
+}
+
+function renderCategoryPage(slug, name, categoryProducts) {
+  const safeName = escapeHtml(name);
+  const safeSlug = escapeHtml(slug);
+  const count = categoryProducts.length;
+  const cardsHtml = categoryProducts
+    .map(p => renderCard(p, { imgPrefix: "../", pdpDir: "../products/" }))
+
+    .join("\n");
+  const headerHtml = adjustPathsForSubdir(partials["header"] || "");
+  const footerHtml = adjustPathsForSubdir(partials["footer"] || "");
+  const widgetHtml = adjustPathsForSubdir(partials["support-widget"] || "");
+
+  return `<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>${safeName} Sarees - J.S.HANDLOOM</title>
+    <meta name="description" content="Browse ${safeName} handloom sarees from J.S.HANDLOOM. Enquire directly on WhatsApp." />
+    <link rel="canonical" href="https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${safeSlug}.html" />
+    <link rel="icon" href="../images/logo-orange.png" />
+    <meta property="og:title" content="${safeName} Sarees - J.S.HANDLOOM" />
+    <meta property="og:type" content="website" />
+    <link rel="stylesheet" href="../styles/tokens.css" />
+    <link rel="stylesheet" href="../styles/general.css" />
+    <link rel="stylesheet" href="../styles/header.css" />
+    <link rel="stylesheet" href="../styles/footer.css" />
+    <link rel="stylesheet" href="../styles/support-widget.css" />
+    <link rel="stylesheet" href="../styles/shop.css" />
+    <link rel="stylesheet" href="../styles/pdp.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  </head>
+  <body>
+    ${headerHtml}
+
+    <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
+      <a href="../index.html">Home</a>
+      <span aria-hidden="true">›</span>
+      <a href="../shop.html">Shop</a>
+      <span aria-hidden="true">›</span>
+      <span>${safeName}</span>
+    </nav>
+
+    <section class="shop-hero">
+      <h1>${safeName}</h1>
+      <p>${count} ${count === 1 ? "saree" : "sarees"} in this collection</p>
+    </section>
+
+    <section class="shop-grid" style="max-width:1100px;margin:0 auto;padding:24px 24px 56px;">
+      ${cardsHtml}
+    </section>
+
+    ${footerHtml}
+    ${widgetHtml}
+  </body>
+  <script src="../scripts/header.js"></script>
+  <script src="../scripts/support-widget.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</html>`;
+}
+
+function generateCategoryPages() {
+  const categoryDir = path.join(DIST, "collections");
+  fs.mkdirSync(categoryDir, { recursive: true });
+  const seen = new Map();
+  for (const p of products) {
+    if (!seen.has(p.categorySlug)) seen.set(p.categorySlug, p.category);
+  }
+  for (const [slug, name] of seen) {
+    const categoryProducts = products.filter(p => p.categorySlug === slug);
+    const html = renderCategoryPage(slug, name, categoryProducts);
+    fs.writeFileSync(path.join(categoryDir, slug + ".html"), html, "utf8");
+    console.log("built: collections/" + slug + ".html");
   }
 }
 
@@ -319,6 +432,7 @@ function build() {
   }
 
   generateProductPages();
+  generateCategoryPages();
 
   for (const dir of ["styles", "scripts", "images"]) {
     const srcDir = path.join(ROOT, dir);
