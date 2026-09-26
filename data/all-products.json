@@ -251,5 +251,27 @@
     "whatsappMessage": "Hi, I'm interested in the Ivory Monipuri Cotton Saree. Could you share more details and pricing?",
     "createdAt": "2026-09-26T20:12:49Z",
     "updatedAt": "2026-09-26T20:12:49Z"
+  },
+  {
+    "id": "JSH-COT-00000005-TURQUOISE",
+    "slug": "turquoise-monipuri-cotton-saree",
+    "name": "Turquoise Monipuri Cotton Saree",
+    "category": "Cotton",
+    "categorySlug": "cotton",
+    "colour": "Turquoise",
+    "work": "Resham Work",
+    "availability": "In Stock",
+    "isFeatured": true,
+    "price": null,
+    "description": "This Turquoise Monipuri cotton saree features printed floral motifs and a contrasting dark border.",
+    "fabricDetails": "This turquoise Monipuri cotton saree is crafted from lightweight cotton fabric with a textured weave. It features a broad dark border with triangular patterns and repeated red floral motifs across the body. Dry clean recommended to maintain the fabric quality.",
+    "images": [
+      "images/products/jsh-cot-00000005-turquoise-1.jpg",
+      "images/products/jsh-cot-00000005-turquoise-2.jpg",
+      "images/products/jsh-cot-00000005-turquoise-3.jpg"
+    ],
+    "whatsappMessage": "Hi, I'm interested in the Turquoise Monipuri Cotton Saree. Could you share more details and pricing?",
+    "createdAt": "2026-09-26T20:15:38Z",
+    "updatedAt": "2026-09-26T20:15:38Z"
   }
 ]
