@@ -1,7 +1,6 @@
 .collections-section {
+  background-color: var(--color-cream);
   padding: 48px 24px 56px;
-  max-width: 1100px;
-  margin: 0 auto;
 }
 
 .collections-title {
@@ -19,6 +18,11 @@
   color: var(--color-text-light);
   text-align: center;
   margin: 0 0 32px;
+}
+
+.collections-inner {
+  max-width: 1100px;
+  margin: 0 auto;
 }
 
 .collections-grid {

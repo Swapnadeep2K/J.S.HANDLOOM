@@ -46,7 +46,7 @@
    Brand Story Teaser
    ============================================================ */
 .brand-story {
-  background-color: var(--color-cream);
+  background-color: var(--color-white);
   padding: 56px 24px;
 }
 
@@ -112,7 +112,7 @@
    ============================================================ */
 .testimonials-section {
   padding: 56px 24px;
-  background-color: var(--color-white);
+  background-color: var(--color-cream);
 }
 
 .testimonials-title {
@@ -133,7 +133,7 @@
 }
 
 .testimonial-card {
-  background-color: var(--color-cream);
+  background-color: var(--color-white);
   border: 1px solid #e3ddc9;
   border-radius: var(--radius-md);
   padding: 24px;

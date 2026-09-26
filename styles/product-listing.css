@@ -1,5 +1,5 @@
 .product-listing {
-    background-color: #ede9d0;
+    background-color: var(--color-white);
     color: #3a001e;
     padding: 2rem;
 }

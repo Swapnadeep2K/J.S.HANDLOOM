@@ -360,10 +360,12 @@ function renderCollectionCards() {
 </a>\n`;
   }
   return `<section id="collections" class="collections-section">
-  <h2 class="collections-title">Shop by Collection</h2>
-  <p class="collections-sub">Explore our handloom sarees by weave and tradition.</p>
-  <div class="collections-grid">
-    ${cards.trim()}
+  <div class="collections-inner">
+    <h2 class="collections-title">Shop by Collection</h2>
+    <p class="collections-sub">Explore our handloom sarees by weave and tradition.</p>
+    <div class="collections-grid">
+      ${cards.trim()}
+    </div>
   </div>
 </section>`;
 }
