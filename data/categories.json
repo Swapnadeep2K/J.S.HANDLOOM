@@ -1,10 +1,11 @@
 [
-  { "name": "Murshidabad Silk", "slug": "murshidabad-silk", "code": "MUR" },
-  { "name": "Garad Silk",       "slug": "garad-silk",       "code": "GAR" },
-  { "name": "Korial Silk",      "slug": "korial-silk",      "code": "KOR" },
-  { "name": "Tant",             "slug": "tant",             "code": "TNT" },
-  { "name": "Jamdani",          "slug": "jamdani",          "code": "JAM" },
-  { "name": "Baluchari",        "slug": "baluchari",        "code": "BAL" },
-  { "name": "Bengal Tussar Silk","slug": "bengal-tussar-silk","code": "TUS" },
-  { "name": "Matka Silk",       "slug": "matka-silk",       "code": "MTK" }
+  { "name": "Murshidabad Silk",   "slug": "murshidabad-silk",    "code": "MUR" },
+  { "name": "Garad Silk",         "slug": "garad-silk",          "code": "GAR" },
+  { "name": "Korial Silk",        "slug": "korial-silk",         "code": "KOR" },
+  { "name": "Tant",               "slug": "tant",                "code": "TNT" },
+  { "name": "Jamdani",            "slug": "jamdani",             "code": "JAM" },
+  { "name": "Muslin",             "slug": "muslin",              "code": "MUS" },
+  { "name": "Baluchari",          "slug": "baluchari",           "code": "BAL" },
+  { "name": "Bengal Tussar Silk", "slug": "bengal-tussar-silk",  "code": "TUS" },
+  { "name": "Matka Silk",         "slug": "matka-silk",          "code": "MTK" }
 ]
