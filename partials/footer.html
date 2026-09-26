@@ -134,6 +134,7 @@
             <option value="UK">🇬🇧 UK</option>
           </select>
         </div>
-        <p>&copy; 2025 J.S.HANDLOOM. All Rights Reserved.</p>
+        <p>&copy; <span id="footer-year"></span> J.S.HANDLOOM. All Rights Reserved.</p>
       </div>
     </footer>
+    <script>document.getElementById("footer-year").textContent = new Date().getFullYear();</script>
