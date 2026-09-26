@@ -58,5 +58,22 @@
     "price": "Price on enquiry",
     "image": "https://placehold.co/400x400/ede9d0/3a001e?text=Category+C",
     "whatsappMessage": "Hi, I'm interested in the Category C (Style 2) saree. Could you share more details and pricing?"
+  },
+  {
+    "name": null,
+    "category": "Category A",
+    "colour": "White and Blue",
+    "work": "Floral Print",
+    "description": "Elegant white silk saree featuring vibrant blue floral prints and golden-yellow leaf motifs with a matching blue border.",
+    "fabricDetails": "Crafted from fine silk, this saree drapes gracefully and offers a smooth texture. The printed floral and leaf design is complemented by a solid border for a refined finish. Dry cleaning is recommended to maintain the fabric quality and vibrant colors.",
+    "price": null,
+    "availability": null,
+    "id": "new-product",
+    "slug": "new-product",
+    "images": [
+      "images/products/new-product-1.jpg"
+    ],
+    "whatsappMessage": "Hi, I saw one of your sarees and I'm interested. Could you share more details and pricing?",
+    "isFeatured": true
   }
 ]
