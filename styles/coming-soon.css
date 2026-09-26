@@ -6,6 +6,7 @@
 }
 
 .coming-soon {
+  position: relative;
   background-color: #fff;
   background-image: url('../images/coming-soon-background.jpg');
   background-image: image-set(
@@ -16,23 +17,32 @@
   background-position: center;
   color: #3a001e;
   overflow: hidden;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .coming-soon-container {
+  position: relative;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 80vh;
-  padding: 1.25rem;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 560px;
+  padding: 48px 32px;
+  background-color: rgba(255, 255, 255, 0.88);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(58, 0, 30, 0.12);
+  margin: 40px 24px;
 }
 
 .coming-soon img {
   height: 10rem;
+  width: auto;
+  object-fit: contain;
   margin: 1rem;
 }
 
@@ -48,18 +58,21 @@
 }
 
 .cta {
-  display: flex;
-  justify-content: space-between;
+  display: inline-flex;
+  justify-content: center;
   align-items: center;
+  gap: 8px;
   font-size: 1rem;
-  padding: 0.75rem 1.25rem;
+  padding: 0.75rem 2rem;
   background-color: #3a001e;
   color: #fff;
   text-decoration: none;
   border-radius: 1.5rem;
   border: 1px solid #3a001e;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  width: 25%;
+  width: auto;
+  white-space: nowrap;
+  margin-top: 8px;
 }
 
 .cta:hover {
@@ -83,13 +96,7 @@
 
 /* Weaving Animation Container */
 .weaving-animation {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none; /* Ensures the animation doesn't interfere with user interactions */
+  display: none;
 }
 
 /* Individual Threads */
@@ -150,7 +157,8 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .cta {
-    width: 80%;
+  .coming-soon-container {
+    margin: 24px 16px;
+    padding: 36px 20px;
   }
 }
