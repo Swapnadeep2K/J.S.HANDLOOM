@@ -109,5 +109,23 @@
       "https://placehold.co/400x400/ede9d0/3a001e?text=Category+C"
     ],
     "whatsappMessage": "Hi, I'm interested in the Category C (Style 2) saree. Could you share more details and pricing?"
+  },
+  {
+    "id": "new-product",
+    "slug": "new-product",
+    "name": "Red Matka Silk Saree with Woven Booti Border",
+    "category": "Matka Silk",
+    "categorySlug": "",
+    "colour": "Red",
+    "work": "Hand-woven",
+    "availability": null,
+    "isFeatured": true,
+    "price": null,
+    "description": "A vibrant red handloom saree featuring traditional woven motifs.",
+    "fabricDetails": "This genuine handloom saree is crafted from breathable traditional fabric with delicate woven detailing. Dry clean only to preserve the fine texture and quality of the weave.",
+    "images": [
+      "images/products/new-product-1.jpg"
+    ],
+    "whatsappMessage": "Hi, I saw one of your sarees and I'm interested. Could you share more details and pricing?"
   }
 ]
