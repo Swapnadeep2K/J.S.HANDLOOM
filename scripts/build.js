@@ -21,6 +21,25 @@
 
 const fs = require("fs");
 const path = require("path");
+// Cache busting: appends the current git commit hash as a query string to all
+// local CSS and JS URLs in built HTML (e.g. styles/general.css?v=7c9abf5).
+// GitHub Pages caches assets for up to 4 hours — without this, visitors
+// navigating between pages after a deploy would receive stale CSS/JS until
+// they hard-refreshed. The hash changes on every deploy, forcing browsers to
+// fetch fresh assets automatically.
+const { execSync } = require("child_process");
+
+const version = (() => {
+  try { return execSync("git rev-parse --short HEAD").toString().trim(); }
+  catch { return Date.now().toString(36); }
+})();
+
+function addCacheBust(html) {
+  return html.replace(
+    /(href|src)="((?!https?:\/\/)[^"]+\.(css|js))"/g,
+    `$1="$2?v=${version}"`
+  );
+}
 
 const ROOT = path.resolve(__dirname, "..");
 const DIST = path.join(ROOT, "dist");
@@ -71,7 +90,7 @@ function renderCard(product, opts) {
   const work         = escapeHtml(product.work || "");
   const availability = escapeHtml(product.availability || "");
   const href         = whatsappUrl(product.whatsappMessage);
-  const pdpHref      = pdpDir + slug + ".html";
+  const pdpHref      = pdpDir + slug;
 
   return `<div class="shop-card" data-category="${categorySlug}" data-colour="${colour}" data-work="${work}" data-availability="${availability}">
   <a class="shop-card-image-link" href="${pdpHref}">
@@ -150,7 +169,7 @@ function renderPDP(product) {
         <p class="pdp-variants-label">Also available in:</p>
         <div class="pdp-variants-row">
           ${siblings.map(s =>
-            `<a href="${escapeHtml(s.slug)}.html" class="pdp-variant" title="${escapeHtml(s.colour)} – ${escapeHtml(s.name)}">
+            `<a href="${escapeHtml(s.slug)}" class="pdp-variant" title="${escapeHtml(s.colour)} – ${escapeHtml(s.name)}">
               <img src="../${escapeHtml(s.images[0])}" alt="${escapeHtml(s.colour)}" loading="lazy" />
             </a>`
           ).join("\n")}
@@ -200,11 +219,11 @@ function renderPDP(product) {
     ${headerHtml}
 
     <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
+      <a href="../">Home</a>
       <span aria-hidden="true">›</span>
-      <a href="../shop.html">Shop</a>
+      <a href="../shop">Shop</a>
       <span aria-hidden="true">›</span>
-      <a href="../collections/${escapeHtml(product.categorySlug)}.html">${category}</a>
+      <a href="../collections/${escapeHtml(product.categorySlug)}">${category}</a>
       <span aria-hidden="true">›</span>
       <span>${name}</span>
     </nav>
@@ -232,7 +251,7 @@ function renderPDP(product) {
           ${WHATSAPP_ICON}
           Enquire on WhatsApp
         </a>
-        <a class="pdp-back" href="../shop.html">&#8592; Back to Shop</a>
+        <a class="pdp-back" href="../shop">&#8592; Back to Shop</a>
       </div>
     </main>
 
@@ -381,7 +400,7 @@ function renderCollectionCards() {
     const label = escapeHtml(name);
     const imgSrc = escapeHtml(image);
     const slugSafe = escapeHtml(slug);
-    cards += `<a class="collection-card" href="collections/${slugSafe}.html">
+    cards += `<a class="collection-card" href="collections/${slugSafe}">
   <div class="collection-card-image">
     <img src="${imgSrc}" alt="${label}" loading="lazy" />
   </div>
@@ -455,9 +474,9 @@ function renderCategoryPage(slug, name, categoryProducts) {
     ${headerHtml}
 
     <nav class="pdp-breadcrumb" aria-label="Breadcrumb">
-      <a href="../index.html">Home</a>
+      <a href="../">Home</a>
       <span aria-hidden="true">›</span>
-      <a href="../shop.html">Shop</a>
+      <a href="../shop">Shop</a>
       <span aria-hidden="true">›</span>
       <span>${safeName}</span>
     </nav>
@@ -495,7 +514,7 @@ function generateCategoryPages() {
   for (const [slug, name] of seen) {
     const categoryProducts = products.filter(p => p.categorySlug === slug);
     const html = renderCategoryPage(slug, name, categoryProducts);
-    fs.writeFileSync(path.join(categoryDir, slug + ".html"), html, "utf8");
+    fs.writeFileSync(path.join(categoryDir, slug + ".html"), addCacheBust(html), "utf8");
     console.log("built: collections/" + slug + ".html");
   }
 }
@@ -506,13 +525,13 @@ function generateProductPages() {
 
   // Redirect /products/ to shop page
   fs.writeFileSync(path.join(productsDir, "index.html"),
-    `<!DOCTYPE html><html><head><meta charset="UTF-8" /><meta http-equiv="refresh" content="0;url=../shop.html" /><title>Redirecting...</title></head><body></body></html>`,
+    `<!DOCTYPE html><html><head><meta charset="UTF-8" /><meta http-equiv="refresh" content="0;url=../shop" /><title>Redirecting...</title></head><body></body></html>`,
     "utf8"
   );
 
   for (const product of products) {
     const html = renderPDP(product);
-    fs.writeFileSync(path.join(productsDir, product.slug + ".html"), html, "utf8");
+    fs.writeFileSync(path.join(productsDir, product.slug + ".html"), addCacheBust(html), "utf8");
     console.log("built: products/" + product.slug + ".html");
   }
 }
@@ -529,7 +548,7 @@ function build() {
     let html = fs.readFileSync(path.join(ROOT, file), "utf8");
     html = processIncludes(html);
     html = processProducts(html);
-    fs.writeFileSync(path.join(DIST, file), html, "utf8");
+    fs.writeFileSync(path.join(DIST, file), addCacheBust(html), "utf8");
     console.log("built:", file);
   }
 
