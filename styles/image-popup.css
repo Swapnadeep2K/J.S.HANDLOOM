@@ -1,81 +1,157 @@
-/* Popup overlay */
+/* ============================================================
+   Image lightbox — J.S. Handloom branded
+   ============================================================ */
+
+/* Overlay — deep maroon-tinted dark backdrop */
 .image-popup-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-  right: 0;
-  bottom: 0;
+  inset: 0;
+  z-index: 1100;
   display: none;
   align-items: center;
   justify-content: center;
-  padding: 1.5rem;
-  background-color: #fff;
+  background-color: rgba(0, 0, 0, 0.78);
 }
 
 .image-popup-overlay.active {
   display: flex;
 }
 
-/* Popup content */
+/* Card wrapper */
 .image-popup-content {
-  width: 100%;
-  height: 100%;
+  position: relative;
+  width: min(360px, 88vw);
 }
 
+/* Carousel — fixed height so all images are stable */
 #carouselExampleIndicators {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  position: relative;
+  height: min(72vh, 500px);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  /* Cream border gives the image a framed, premium feel */
+  box-shadow: 0 0 0 2px var(--color-cream), 0 24px 60px rgba(0, 0, 0, 0.6);
 }
 
 #carouselExampleIndicators .carousel-inner {
-  width: auto;
+  height: 100%;
+}
+
+#carouselExampleIndicators .carousel-item {
+  height: 100%;
 }
 
 .image-popup-content img {
-  max-width: 24rem;
-  width: auto !important;
-  height: auto;
-  object-fit: contain;
-  border: 0.25rem solid #3a001e;
-  border-radius: 1rem;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
-  aspect-ratio: 3 / 4;
+  display: block;
 }
 
-.close-btn {
+/* Nav arrows — maroon circle with white chevron */
+#carouselExampleIndicators .carousel-control-prev,
+#carouselExampleIndicators .carousel-control-next {
+  width: 48px;
+  opacity: 1;
+}
+
+#carouselExampleIndicators .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next-icon {
+  width: 34px;
+  height: 34px;
+  background-color: var(--color-maroon-900);
+  border-radius: 50%;
+  background-size: 40% 40%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+  transition: background-color 0.15s ease;
+}
+
+#carouselExampleIndicators .carousel-control-prev:hover .carousel-control-prev-icon,
+#carouselExampleIndicators .carousel-control-next:hover .carousel-control-next-icon {
+  background-color: #5a0030;
+}
+
+/* Subtle gradient at image bottom so indicators always read clearly */
+#carouselExampleIndicators::after {
+  content: "";
   position: absolute;
-  top: 1rem;
-  right: 1rem;
-  color: #3a001e;
-  border: none;
-  border-radius: 5px;
-  padding: 0.5rem;
-  cursor: pointer;
-  font-size: 1rem;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 72px;
+  background: linear-gradient(to top, rgba(20, 0, 10, 0.55), transparent);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  pointer-events: none;
   z-index: 1;
 }
 
+/* Dot indicators — cream, active gets larger */
+#carouselExampleIndicators .carousel-indicators {
+  margin-bottom: 14px;
+  gap: 7px;
+  z-index: 2; /* above the gradient pseudo-element */
+}
+
+#carouselExampleIndicators .carousel-indicators button {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  border: none;
+  background-color: var(--color-cream);
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  flex-shrink: 0;
+}
+
+#carouselExampleIndicators .carousel-indicators button.active {
+  opacity: 1;
+  transform: scale(1.4);
+}
+
+/* Close button — maroon circle, cream border + icon, anchored to top-right of card */
+.close-btn {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 2px solid var(--color-cream);
+  background-color: var(--color-maroon-900);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  padding: 0;
+  color: var(--color-cream);
+  transition: background-color 0.15s ease;
+}
+
 .close-btn:hover {
-  background-color: #3a001e;
-  color: #fff;
+  background-color: #5a0030;
+}
+
+.close-btn svg {
+  width: 12px;
+  height: 12px;
+  stroke: var(--color-cream);
+  stroke-width: 2.5;
 }
 
 .no-scroll {
   overflow: hidden;
   position: fixed;
   width: 100%;
-  height: 100%;
+  /* top is set dynamically by image-popup.js to preserve scroll position */
 }
 
-@media only screen and (max-width: 768px) {
-  .image-popup-overlay {
-    padding: 0.5rem;
+@media (max-width: 640px) {
+  .image-popup-content {
+    width: 90vw;
   }
-  
-  .image-popup-content img {
-    max-width: 90vw;
+
+  #carouselExampleIndicators {
+    height: min(80vh, 440px);
   }
 }

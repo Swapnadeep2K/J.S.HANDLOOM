@@ -1,21 +1,30 @@
-/* Section Styling */
+/* ============================================================
+   Explore Our Saree Heritage — showcase section
+   ============================================================ */
 .showcase {
-  padding: 2rem;
+  padding: 56px 24px;
+  background-color: var(--color-white);
 }
 
 .showcase-title {
-  color: #3a001e;
-  font-weight: bold;
-  margin-bottom: 20px;
+  font-family: var(--font-brand);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
+  text-align: center;
+  margin: 0 0 36px;
 }
 
 .showcase-wrapper {
   display: flex;
   flex-direction: row;
   gap: 40px;
+  max-width: 1100px;
+  margin: 0 auto;
+  align-items: flex-start;
 }
 
-/* Main Highlight */
+/* Gallery side */
 .featured-image-gallery {
   flex: 2;
   display: flex;
@@ -26,22 +35,20 @@
 .featured-images {
   display: flex;
   gap: 10px;
-  overflow-x: auto;
-  position: relative;
 }
 
 .main-saree-image-div {
   flex: 1;
-  position: relative;
 }
 
 .main-saree-image {
   cursor: pointer;
-  max-width:  24rem;
+  width: 100%;
   height: auto;
-  /* border: 2px solid #3663D8; */
-  border-radius: 0.6rem;
+  border-radius: var(--radius-md);
   aspect-ratio: 3 / 4;
+  object-fit: cover;
+  display: block;
 }
 
 .side-saree-image-div {
@@ -49,75 +56,62 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 10px;
-  object-fit: cover;
 }
 
 .side-saree-image {
   cursor: pointer;
-  max-width: 12rem;
+  width: 100%;
   height: auto;
-  /* border: 2px solid #3663D8; */
-  border-radius: 0.6rem;
+  border-radius: var(--radius-sm);
   aspect-ratio: 3 / 4;
   object-fit: cover;
+  display: block;
 }
 
+.main-saree-image:hover,
+.side-saree-image:hover {
+  opacity: 0.9;
+}
+
+/* Caption */
 .caption {
-  font-size: 16px;
-  color: #3a001e;
-  margin-bottom: 15px;
+  font-family: var(--font-brand);
+  font-size: 14px;
+  color: var(--color-text-light);
+  line-height: 1.75;
+  margin: 0;
 }
 
+.caption strong {
+  color: var(--color-text-dark);
+}
+
+/* CTA button — matches brand-story-link style */
 .explore-now {
-  justify-content: center;
-  gap: 1rem;
-  align-items: center;
-  display: inline-flex;
-  background-color: #3a001e;
-  color: #fff;
+  display: inline-block;
+  font-family: var(--font-brand);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--color-maroon-900);
   text-decoration: none;
-  padding: 12px 20px;
-  border-radius: 5px;
-  border: 1px solid #3a001e;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
+  border-bottom: 2px solid var(--color-maroon-900);
+  padding-bottom: 2px;
+  transition: opacity 0.15s ease;
 }
 
 .explore-now:hover {
-  background-color: #fff;
-  color: #3a001e;
-  border: 1px solid #3a001e;
+  opacity: 0.65;
+  color: var(--color-maroon-900);
 }
 
-/* Gallery Section */
-.showcase-gallery {
-  flex: 1;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.showcase-item {
-  border-radius: 5px;
-  overflow: hidden;
-  text-align: center;
-}
-
-.showcase-image {
-  width: 100%;
-  height: auto;
-  border-radius: 5px;
-}
-
+/* Instagram embed side */
 .insta-iframe {
   flex: 1;
+  min-width: 0;
 }
 
-@media only screen and (max-width: 768px) {
-  .showcase {
-    text-align: center;
-  }
-
+/* Responsive */
+@media (max-width: 860px) {
   .showcase-wrapper {
     flex-direction: column;
   }
@@ -125,5 +119,17 @@
   .insta-iframe {
     max-height: 480px;
     overflow: hidden;
+    width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .showcase {
+    padding: 40px 20px;
+  }
+
+  .showcase-title {
+    font-size: 20px;
+    margin-bottom: 28px;
   }
 }

@@ -38,7 +38,9 @@ galleryImages.forEach((image) => {
     );
     // popupImage.src = image.src;
     popupOverlay.classList.add("active");
-    document.querySelector("body").classList.add("no-scroll");
+    const scrollY = window.scrollY;
+    document.body.style.top = `-${scrollY}px`;
+    document.body.classList.add("no-scroll");
     popupCarouselInnerItem.forEach(function (e) {
       if (
         image.getAttribute("data-showcase-slide") ===
@@ -68,7 +70,10 @@ closeBtn.addEventListener("click", () => {
         ".image-popup-overlay .carousel-inner .carousel-item"
       );
   popupOverlay.classList.remove("active");
-  document.querySelector("body").classList.remove("no-scroll");
+  const scrollY = Math.abs(parseInt(document.body.style.top || "0"));
+  document.body.classList.remove("no-scroll");
+  document.body.style.top = "";
+  window.scrollTo(0, scrollY);
   popupCarouselInnerItem.forEach(function (e) {
     if(e.classList.contains("active")) {
         e.classList.remove("active");
