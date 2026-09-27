@@ -130,13 +130,19 @@ function renderPDP(product) {
     ? products.filter(p => p.parentId === product.parentId && p.slug !== product.slug)
     : [];
 
-  // Similar sarees: same category, non-siblings first, siblings appended at end
+  // Similar sarees: same category, sorted by updatedAt desc, non-siblings first, siblings last
   const siblingIds = new Set(siblings.map(p => p.slug));
+  const byDate = (a, b) => {
+    if (!a.updatedAt && !b.updatedAt) return 0;
+    if (!a.updatedAt) return 1;
+    if (!b.updatedAt) return -1;
+    return new Date(b.updatedAt) - new Date(a.updatedAt);
+  };
   const sameCategory = products.filter(p => p.categorySlug === product.categorySlug && p.slug !== product.slug);
   const similar = [
-    ...sameCategory.filter(p => !siblingIds.has(p.slug)),
-    ...sameCategory.filter(p => siblingIds.has(p.slug)),
-  ].slice(0, 4);
+    ...sameCategory.filter(p => !siblingIds.has(p.slug)).sort(byDate),
+    ...sameCategory.filter(p => siblingIds.has(p.slug)).sort(byDate),
+  ].slice(0, 3);
 
   const name         = escapeHtml(product.name);
   const category     = escapeHtml(product.category);
@@ -310,7 +316,7 @@ function processProducts(html) {
   html = html.replace(/<!--#products(?:\s+limit=(\d+))?-->/g, (match, limitStr) => {
     if (limitStr) {
       const limit = parseInt(limitStr, 10);
-      const sorted = [...products].sort((a, b) => {
+      const sorted = [...products].filter(p => p.isFeatured).sort((a, b) => {
         if (!a.updatedAt && !b.updatedAt) return 0;
         if (!a.updatedAt) return 1;
         if (!b.updatedAt) return -1;
