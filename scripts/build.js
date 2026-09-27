@@ -120,7 +120,7 @@ function renderCard(product, opts) {
 function adjustPathsForSubdir(html) {
   return html
     .replace(/\bhref="\/"/g, 'href="../../"')
-    .replace(/\bhref="(?!https?:\/\/|\/\/|#|\.\.\/)([\w])/g, 'href="../$1')
+    .replace(/\bhref="(?!https?:\/\/|\/\/|#|\.\.\/|mailto:|tel:)([\w])/g, 'href="../$1')
     .replace(/\bsrc="(?!https?:\/\/|\/\/|\.\.\/)([\w])/g, 'src="../$1');
 }
 
