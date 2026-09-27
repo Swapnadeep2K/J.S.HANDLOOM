@@ -119,6 +119,7 @@ function renderCard(product, opts) {
 // Rewrite local-relative paths to ../ for pages one level deep (e.g. products/<slug>.html)
 function adjustPathsForSubdir(html) {
   return html
+    .replace(/\bhref="\/"/g, 'href="../../"')
     .replace(/\bhref="(?!https?:\/\/|\/\/|#|\.\.\/)([\w])/g, 'href="../$1')
     .replace(/\bsrc="(?!https?:\/\/|\/\/|\.\.\/)([\w])/g, 'src="../$1');
 }
