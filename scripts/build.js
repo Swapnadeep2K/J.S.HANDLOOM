@@ -95,7 +95,7 @@ function renderCard(product, opts) {
   return `<div class="shop-card" data-category="${categorySlug}" data-colour="${colour}" data-work="${work}" data-availability="${availability}">
   <a class="shop-card-image-link" href="${pdpHref}">
     <div class="shop-card-image">
-      <img src="${image}" alt="${name}" loading="lazy" width="400" height="400" />
+      <img src="${image}" alt="${name}${colour ? ' - ' + colour : ''}${work ? ' with ' + work : ''}" loading="lazy" width="400" height="400" />
     </div>
   </a>
   <div class="shop-card-body">
