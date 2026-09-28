@@ -272,6 +272,24 @@ function renderPDP(product) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org/",
+      "@type": "Product",
+      "name": "${name}",
+      "description": "${description}",
+      "image": "https://swapnadeep2k.github.io/J.S.HANDLOOM/${escapeHtml(product.images[0])}",
+      "availability": "https://schema.org/${availability === 'In Stock' ? 'InStock' : 'OutOfStock'}",
+      "color": "${colour}",
+      "material": "Silk",
+      "offers": {
+        "@type": "Offer",
+        "priceCurrency": "INR",
+        "price": "${price}",
+        "url": "https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${slug}"
+      }
+    }
+    </script>
   </head>
   <body>
     ${headerHtml}
@@ -527,6 +545,24 @@ function renderCategoryPage(slug, name, categoryProducts) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Collection",
+      "name": "${safeName} Sarees",
+      "description": "${metaDesc}",
+      "url": "https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${safeSlug}",
+      "image": "${ogImage}",
+      "itemListElement": [
+        ${categoryProducts.slice(0, 5).map((p, i) => `{
+          "@type": "ListItem",
+          "position": ${i + 1},
+          "name": "${escapeHtml(p.name)}",
+          "url": "https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${p.slug}"
+        }`).join(',\n        ')}
+      ]
+    }
+    </script>
   </head>
   <body>
     ${headerHtml}
