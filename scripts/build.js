@@ -116,6 +116,57 @@ function renderCard(product, opts) {
 </div>`;
 }
 
+// Generate sitemap.xml dynamically from products and static pages
+function generateSitemap() {
+  const staticPages = [
+    { loc: "/", changefreq: "weekly", priority: "1.0" },
+    { loc: "/shop", changefreq: "weekly", priority: "0.9" },
+    { loc: "/collections", changefreq: "weekly", priority: "0.9" },
+    { loc: "/about-us", changefreq: "monthly", priority: "0.8" },
+    { loc: "/shipping", changefreq: "monthly", priority: "0.6" },
+    { loc: "/returns", changefreq: "monthly", priority: "0.6" },
+  ];
+
+  // Get unique categories
+  const categories = [...new Map(products.map(p => [p.categorySlug, p.category])).entries()];
+
+  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
+  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
+
+  // Add static pages
+  for (const page of staticPages) {
+    const url = `https://swapnadeep2k.github.io/J.S.HANDLOOM${page.loc}`;
+    xml += `  <url>\n`;
+    xml += `    <loc>${url}</loc>\n`;
+    xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
+    xml += `    <priority>${page.priority}</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
+  // Add collection pages
+  for (const [slug, name] of categories) {
+    const url = `https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${slug}`;
+    xml += `  <url>\n`;
+    xml += `    <loc>${url}</loc>\n`;
+    xml += `    <changefreq>weekly</changefreq>\n`;
+    xml += `    <priority>0.8</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
+  // Add product pages
+  for (const product of products) {
+    const url = `https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${product.slug}`;
+    xml += `  <url>\n`;
+    xml += `    <loc>${url}</loc>\n`;
+    xml += `    <changefreq>monthly</changefreq>\n`;
+    xml += `    <priority>0.7</priority>\n`;
+    xml += `  </url>\n`;
+  }
+
+  xml += '</urlset>\n';
+  return xml;
+}
+
 // Rewrite local-relative paths to ../ for pages one level deep (e.g. products/<slug>.html)
 function adjustPathsForSubdir(html) {
   return html
@@ -570,6 +621,19 @@ function build() {
     }
   }
   fs.rmSync(path.join(DIST, "scripts", "build.js"), { force: true });
+
+  // Generate and write SEO files
+  const sitemapXml = generateSitemap();
+  fs.writeFileSync(path.join(DIST, "sitemap.xml"), sitemapXml, "utf8");
+  fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemapXml, "utf8");
+  console.log("generated: sitemap.xml");
+
+  // Copy robots.txt
+  const robotsFile = path.join(ROOT, "robots.txt");
+  if (fs.existsSync(robotsFile)) {
+    fs.copyFileSync(robotsFile, path.join(DIST, "robots.txt"));
+    console.log("copied: robots.txt");
+  }
 
   // .nojekyll isn't strictly required (upload-pages-artifact bypasses Jekyll),
   // but it's harmless and protects against a future switch to the default
