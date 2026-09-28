@@ -255,7 +255,7 @@ function renderPDP(product) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${name} - J.S.HANDLOOM</title>
     <meta name="description" content="${description}" />
-    <link rel="canonical" href="https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${slug}.html" />
+    <link rel="canonical" href="https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${slug}" />
     <link rel="icon" href="../images/logo-orange.png" />
     <meta property="og:title" content="${name} - J.S.HANDLOOM" />
     <meta property="og:description" content="${description}" />
@@ -510,7 +510,7 @@ function renderCategoryPage(slug, name, categoryProducts) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>${safeName} Sarees - J.S.HANDLOOM</title>
     <meta name="description" content="${metaDesc}" />
-    <link rel="canonical" href="https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${safeSlug}.html" />
+    <link rel="canonical" href="https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${safeSlug}" />
     <link rel="icon" href="../images/logo-orange.png" />
     <meta property="og:title" content="${safeName} Sarees - J.S.HANDLOOM" />
     <meta property="og:description" content="${metaDesc}" />
