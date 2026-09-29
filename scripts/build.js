@@ -247,6 +247,7 @@ function renderPDP(product) {
   const headerHtml = adjustPathsForSubdir(partials["header"] || "");
   const footerHtml = adjustPathsForSubdir(partials["footer"] || "");
   const widgetHtml = adjustPathsForSubdir(partials["support-widget"] || "");
+  const analyticsHtml = partials["analytics"] || "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -290,6 +291,7 @@ function renderPDP(product) {
       }
     }
     </script>
+    ${analyticsHtml}
   </head>
   <body>
     ${headerHtml}
@@ -520,6 +522,7 @@ function renderCategoryPage(slug, name, categoryProducts) {
   const headerHtml = adjustPathsForSubdir(partials["header"] || "");
   const footerHtml = adjustPathsForSubdir(partials["footer"] || "");
   const widgetHtml = adjustPathsForSubdir(partials["support-widget"] || "");
+  const analyticsHtml = partials["analytics"] || "";
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -563,6 +566,7 @@ function renderCategoryPage(slug, name, categoryProducts) {
       ]
     }
     </script>
+    ${analyticsHtml}
   </head>
   <body>
     ${headerHtml}
