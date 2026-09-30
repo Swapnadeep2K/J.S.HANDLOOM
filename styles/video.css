@@ -23,6 +23,16 @@
   width: 35rem;
 }
 
+.video-container video {
+  display: block;
+  width: 35rem;
+  max-width: 100%;
+  height: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 8px;
+  background-color: var(--color-maroon-900, #3a001e);
+}
+
 .video-placeholder {
   height: 20rem;
   width: 35rem;
@@ -52,6 +62,10 @@
   .video-container iframe,
   .video-placeholder {
     height: 11rem;
+    width: 22rem;
+  }
+
+  .video-container video {
     width: 22rem;
   }
 }
