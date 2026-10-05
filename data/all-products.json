@@ -273,5 +273,28 @@
     "whatsappMessage": "Hi, I'm interested in the Turquoise Monipuri Cotton Saree. Could you share more details and pricing?",
     "createdAt": "2026-09-26T20:15:38Z",
     "updatedAt": "2026-09-26T20:15:38Z"
+  },
+  {
+    "id": "JSH-KHA-00000001-IVORY",
+    "slug": "ivory-khadi-saree-with-dobby-temple-border",
+    "name": "Ivory Khadi Saree with Dobby Temple Border",
+    "category": "Khadi",
+    "categorySlug": "khadi",
+    "colour": "Ivory",
+    "work": "Dobby Temple Border",
+    "availability": "Made to Order",
+    "isFeatured": true,
+    "price": "Price on enquiry",
+    "description": "This Ivory Pondoru Khadi saree features authentic handspun khadi woven by charka with a dobby temple border.",
+    "fabricDetails": "This ivory saree is crafted from pure handspun khadi sourced from an authentic government source. It features an authentic khadi weave made by charka with a dobby temple border. The saree measures 6.5 meters in length with a width of 46 inches and includes a matching blouse piece.",
+    "images": [
+      "images/products/jsh-kha-00000001-ivory-1.jpg",
+      "images/products/jsh-kha-00000001-ivory-2.jpg",
+      "images/products/jsh-kha-00000001-ivory-3.jpg",
+      "images/products/jsh-kha-00000001-ivory-4.jpg"
+    ],
+    "whatsappMessage": "Hi, I'm interested in the Ivory Khadi Saree with Dobby Temple Border. Could you share more details and pricing?",
+    "createdAt": "2026-10-05T21:23:18Z",
+    "updatedAt": "2026-10-05T21:23:18Z"
   }
 ]
