@@ -398,7 +398,8 @@ function processProducts(html) {
     return products.map(renderCard).join("\n");
   });
   html = html.replace(/<!--#category-filters-->/g, () => renderFilterChips(products));
-  html = html.replace(/<!--#collections-->/g, () => renderCollectionCards());
+  html = html.replace(/<!--#collections(?:\s+limit=(\d+))?-->/g, (match, limitStr) =>
+    renderCollectionCards(limitStr ? parseInt(limitStr, 10) : undefined));
   html = html.replace(/<!--#filter-bar-->/g, () => renderFilterBar());
   return html;
 }
@@ -465,16 +466,24 @@ function renderFilterBar(pool, showCategory) {
 </div>`;
 }
 
-function renderCollectionCards() {
+function renderCollectionCards(limit) {
   const seen = new Map();
   for (const p of products) {
     if (!seen.has(p.categorySlug)) {
-      seen.set(p.categorySlug, { name: p.category, image: p.images[0] });
+      seen.set(p.categorySlug, { name: p.category, image: p.images[0], count: 0, latestTimestamp: 0 });
     }
+    const collection = seen.get(p.categorySlug);
+    collection.count += 1;
+    const timestamp = Date.parse(p.updatedAt) || Date.parse(p.createdAt) || 0;
+    collection.latestTimestamp = Math.max(collection.latestTimestamp, timestamp);
+  }
+  let collections = [...seen.entries()];
+  if (limit !== undefined) {
+    collections.sort(([, a], [, b]) => b.count - a.count || b.latestTimestamp - a.latestTimestamp);
+    collections = collections.slice(0, limit);
   }
   let cards = "";
-  for (const [slug, { name, image }] of seen) {
-    const count = products.filter(p => p.categorySlug === slug).length;
+  for (const [slug, { name, image, count }] of collections) {
     const label = escapeHtml(name);
     const imgSrc = escapeHtml(image);
     const slugSafe = escapeHtml(slug);
