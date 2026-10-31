@@ -79,6 +79,9 @@ Running `node scripts/build.js`:
 4. Generates individual PDPs into `dist/products/<slug>.html`
 5. Generates category listing pages into `dist/collections/<slug>.html`
 6. Writes everything to `dist/` alongside copies of `styles/`, `scripts/`, and `images/`
+7. Regenerates `sitemap.xml` in the root and `dist/` from indexable root HTML pages, products, and collections. Pages marked `noindex` and redirect pages are excluded.
+
+Do not edit `sitemap.xml` manually. Its `lastmod` dates come from Git history for page/template dependencies and product `updatedAt` values, not the build date. Keep `updatedAt` current when changing product content. GitHub Actions fetches full history so these dates remain accurate.
 
 ## Build commands
 
@@ -88,6 +91,8 @@ npm run preview   # build + serve dist/ locally
 ```
 
 No npm dependencies — `package.json` just names the two commands.
+
+Run sitemap tests with `node --test tests/sitemap.test.js`.
 
 ## Product schema (`data/products.json`)
 
