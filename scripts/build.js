@@ -27,7 +27,8 @@ const path = require("path");
 // navigating between pages after a deploy would receive stale CSS/JS until
 // they hard-refreshed. The hash changes on every deploy, forcing browsers to
 // fetch fresh assets automatically.
-const { execSync } = require("child_process");
+const { execSync, execFileSync } = require("child_process");
+const { generateSitemap } = require("./sitemap");
 
 const version = (() => {
   try { return execSync("git rev-parse --short HEAD").toString().trim(); }
@@ -114,57 +115,6 @@ function renderCard(product, opts) {
     </div>
   </div>
 </div>`;
-}
-
-// Generate sitemap.xml dynamically from products and static pages
-function generateSitemap() {
-  const staticPages = [
-    { loc: "/", changefreq: "weekly", priority: "1.0" },
-    { loc: "/shop", changefreq: "weekly", priority: "0.9" },
-    { loc: "/collections", changefreq: "weekly", priority: "0.9" },
-    { loc: "/about-us", changefreq: "monthly", priority: "0.8" },
-    { loc: "/shipping", changefreq: "monthly", priority: "0.6" },
-    { loc: "/returns", changefreq: "monthly", priority: "0.6" },
-  ];
-
-  // Get unique categories
-  const categories = [...new Map(products.map(p => [p.categorySlug, p.category])).entries()];
-
-  let xml = '<?xml version="1.0" encoding="UTF-8"?>\n';
-  xml += '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n';
-
-  // Add static pages
-  for (const page of staticPages) {
-    const url = `https://swapnadeep2k.github.io/J.S.HANDLOOM${page.loc}`;
-    xml += `  <url>\n`;
-    xml += `    <loc>${url}</loc>\n`;
-    xml += `    <changefreq>${page.changefreq}</changefreq>\n`;
-    xml += `    <priority>${page.priority}</priority>\n`;
-    xml += `  </url>\n`;
-  }
-
-  // Add collection pages
-  for (const [slug, name] of categories) {
-    const url = `https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${slug}`;
-    xml += `  <url>\n`;
-    xml += `    <loc>${url}</loc>\n`;
-    xml += `    <changefreq>weekly</changefreq>\n`;
-    xml += `    <priority>0.8</priority>\n`;
-    xml += `  </url>\n`;
-  }
-
-  // Add product pages
-  for (const product of products) {
-    const url = `https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${product.slug}`;
-    xml += `  <url>\n`;
-    xml += `    <loc>${url}</loc>\n`;
-    xml += `    <changefreq>monthly</changefreq>\n`;
-    xml += `    <priority>0.7</priority>\n`;
-    xml += `  </url>\n`;
-  }
-
-  xml += '</urlset>\n';
-  return xml;
 }
 
 // Rewrite local-relative paths to ../ for pages one level deep (e.g. products/<slug>.html)
@@ -670,9 +620,20 @@ function build() {
     }
   }
   fs.rmSync(path.join(DIST, "scripts", "build.js"), { force: true });
+  fs.rmSync(path.join(DIST, "scripts", "sitemap.js"), { force: true });
 
   // Generate and write SEO files
-  const sitemapXml = generateSitemap();
+  const sitemapXml = generateSitemap({
+    pages: htmlFiles.map(file => ({ file, html: fs.readFileSync(path.join(ROOT, file), "utf8") })),
+    products,
+    lastModified(files) {
+      try {
+        return execFileSync("git", ["log", "-1", "--format=%cI", "--", ...files], { cwd: ROOT }).toString().trim();
+      } catch {
+        return undefined;
+      }
+    },
+  });
   fs.writeFileSync(path.join(DIST, "sitemap.xml"), sitemapXml, "utf8");
   fs.writeFileSync(path.join(ROOT, "sitemap.xml"), sitemapXml, "utf8");
   console.log("generated: sitemap.xml");
