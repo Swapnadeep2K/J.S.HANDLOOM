@@ -136,6 +136,56 @@ test("product schema contains honest enquiry pricing and parseable JSON", async 
   expect(product.material).not.toBe("Silk");
 });
 
+test("video loads timed English captions without changing playback controls", async ({ page }) => {
+  await page.goto("/");
+  const video = page.locator("video");
+  await video.scrollIntoViewIfNeeded();
+  await expect(video).toHaveAttribute("controls", "");
+  await expect(video.locator('track[kind="captions"]')).toHaveAttribute("srclang", "en");
+  await expect.poll(() => video.evaluate(el => el.textTracks[0]?.cues?.length)).toBe(5);
+  const track = await video.evaluate(el => ({
+    mode: el.textTracks[0].mode,
+    cues: Array.from(el.textTracks[0].cues, cue => ({ start: cue.startTime, end: cue.endTime, text: cue.text })),
+    duration: el.duration,
+  }));
+  expect(track.mode).toBe("showing");
+  expect(track.cues[0].start).toBe(0);
+  expect(track.cues.at(-1).end).toBeLessThanOrEqual(track.duration);
+  for (const [index, cue] of track.cues.entries()) {
+    expect(cue.text.trim()).not.toBe("");
+    expect(cue.end).toBeGreaterThan(cue.start);
+    if (index) expect(cue.start).toBeGreaterThanOrEqual(track.cues[index - 1].end);
+  }
+});
+
+test("late homepage fonts do not move already-rendered content", async ({ page, context, browserName }) => {
+  test.skip(browserName !== "chromium", "Layout shift observation is only available in Chromium.");
+  await page.setViewportSize({ width: 390, height: 844 });
+  let releaseFonts;
+  const gate = new Promise(resolve => { releaseFonts = resolve; });
+  await context.route("**/fonts/*.woff2", async route => {
+    await gate;
+    await route.continue();
+  });
+  await context.addInitScript(() => {
+    window.lateFontCls = 0;
+    new PerformanceObserver(list => {
+      for (const entry of list.getEntries()) if (!entry.hadRecentInput) window.lateFontCls += entry.value;
+    }).observe({ type: "layout-shift", buffered: true });
+  });
+  try {
+    await page.goto("/", { waitUntil: "domcontentloaded" });
+    await expect(page.locator("h1")).toBeVisible();
+    await page.waitForTimeout(1000);
+    const before = await page.locator("#hero").boundingBox();
+    releaseFonts();
+    await page.evaluate(() => document.fonts.ready);
+    await page.waitForTimeout(500);
+    expect(await page.locator("#hero").boundingBox()).toEqual(before);
+    expect(await page.evaluate(() => window.lateFontCls)).toBeLessThanOrEqual(0.01);
+  } finally { releaseFonts(); }
+});
+
 test("mobile hero stays within the cold-cache loading budget", async ({ page, context, browserName }) => {
   test.skip(browserName !== "chromium", "CDP throttling is only available in Chromium.");
   test.setTimeout(120_000);
