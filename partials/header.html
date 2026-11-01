@@ -207,7 +207,16 @@
             </svg>
           </button>
         </div>
-        <div class="sidebar" id="sidebar">
+        <div
+          class="sidebar"
+          id="sidebar"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Mobile navigation"
+          aria-hidden="true"
+          inert
+          tabindex="-1"
+        >
           <div class="sidebar-header">
             <div class="logo-container">
               <a href="index">
@@ -215,6 +224,8 @@
                   src="images/logo-white.png"
                   alt="J.S.HANDLOOM Logo"
                   class="logo"
+                  loading="lazy"
+                  decoding="async"
                 />
               </a>
             </div>
