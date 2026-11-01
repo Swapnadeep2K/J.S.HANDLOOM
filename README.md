@@ -88,11 +88,17 @@ Do not edit `sitemap.xml` manually. Its `lastmod` dates come from Git history fo
 ```bash
 npm run build     # build only → dist/
 npm run preview   # build + serve dist/ locally
+npm test          # Node unit tests
+npm run test:browser # Playwright desktop/mobile Chromium and Firefox checks
 ```
 
-No npm dependencies — `package.json` just names the two commands.
+Use Node 20 or newer (matching CI). Build and browser runtime code use no npm dependencies. QA uses development dependencies: install them with `npm ci`, then install browser engines with `npx playwright install chromium firefox`. Build before running the browser suite, which serves `dist/` on an isolated local test server and mocks third-party resources.
 
-Run sitemap tests with `node --test tests/sitemap.test.js`.
+Run a unit test file with `node --test tests/sitemap.test.js`, or a single case with `node --test --test-name-pattern="discovers new pages" tests/sitemap.test.js`. Run one browser case with `npm run test:browser -- --project=chromium -g "mobile menu"`. On Windows PowerShell, use `npm.cmd` / `npx.cmd` if execution policy blocks the `.ps1` launchers.
+
+Pull requests run unit tests, the build, and browser checks in `.github/workflows/quality.yml`. Deployment runs these same gates before publishing. Require the `site-quality` check in branch protection to prevent merging a failing PR.
+
+The Chromium browser suite includes a three-run, cold-cache mobile loading guard: median LCP <= 2.5 seconds and CLS <= 0.1 under 150 ms latency, 200 KB/s download and 4x CPU throttling. External resources are mocked, so this catches local regressions rather than certifying production Core Web Vitals. Recheck the deployed site with real third-party resources after publishing.
 
 ## Product schema (`data/products.json`)
 
@@ -169,6 +175,14 @@ Category codes: `mtk` = Matka Silk, `mus` = Muslin, `mur` = Murshidabad Silk, `c
 ## Deployment
 
 Every push to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`), which runs `npm run build` and deploys `dist/` to GitHub Pages. No separate hosting or database needed.
+
+### Hosting security limitation
+
+GitHub Pages remains the approved host. Repository files cannot configure custom HTTP response headers such as Content-Security-Policy or anti-framing protection (`frame-ancestors` / `X-Frame-Options`). A `_headers` file would not apply, and a CSP meta tag cannot enforce `frame-ancestors`. This limitation is accepted for the current hosting setup; revisit it if moving to a configurable host or proxy. Do not claim these headers are enabled.
+
+### Video audio and captions QA
+
+In Chrome, Edge and Firefox, play the homepage video, unmute its native player, increase player volume, and check Windows Volume Mixer for a muted browser. Verify playback, pause and seek, then listen for narration versus music. Decoder/audio-track checks do not establish audible speaker output. Add caption tracks only from a verified transcript with timings; do not invent dialogue or claim caption compliance from an audio-track check.
 
 ## Branch info
 
