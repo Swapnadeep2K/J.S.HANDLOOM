@@ -78,7 +78,7 @@ Running `node scripts/build.js`:
 3. Appends the current git commit hash to all local CSS/JS URLs for cache busting (e.g. `styles/general.css?v=7c9abf5`)
 4. Generates individual PDPs into `dist/products/<slug>.html`
 5. Generates category listing pages into `dist/collections/<slug>.html`
-6. Writes everything to `dist/` alongside copies of `styles/`, `scripts/`, and `images/`
+6. Writes everything to `dist/` alongside copies of `styles/`, `scripts/`, `images/`, and `fonts/`
 7. Regenerates `sitemap.xml` in the root and `dist/` from indexable root HTML pages, products, and collections. Pages marked `noindex` and redirect pages are excluded.
 
 Do not edit `sitemap.xml` manually. Its `lastmod` dates come from Git history for page/template dependencies and product `updatedAt` values, not the build date. Keep `updatedAt` current when changing product content. GitHub Actions fetches full history so these dates remain accurate.
@@ -99,6 +99,10 @@ Run a unit test file with `node --test tests/sitemap.test.js`, or a single case 
 Pull requests run unit tests, the build, and browser checks in `.github/workflows/quality.yml`. Deployment runs these same gates before publishing. Require the `site-quality` check in branch protection to prevent merging a failing PR.
 
 The Chromium browser suite includes a three-run, cold-cache mobile loading guard: median LCP <= 2.5 seconds and CLS <= 0.1 under 150 ms latency, 200 KB/s download and 4x CPU throttling. External resources are mocked, so this catches local regressions rather than certifying production Core Web Vitals. Recheck the deployed site with real third-party resources after publishing.
+
+The homepage self-hosts the existing Poppins Latin fonts in `fonts/`, with their OFL licence. Above-the-fold weights are preloaded. `font-display: optional` keeps fallback text stable if a font arrives too late to use on the initial render; other pages retain their existing Google Fonts setup. Do not change this to `swap` without checking delayed-font layout shifts.
+
+The handloom film has a default English caption track at `images/bengal-handloom-saree-weaving.en.vtt`, timed from the supplied transcript. Keep captions synchronized when replacing the video; verify them using the player's caption control.
 
 ## Product schema (`data/products.json`)
 

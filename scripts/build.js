@@ -597,7 +597,7 @@ function build() {
   generateProductPages();
   generateCategoryPages();
 
-  for (const dir of ["styles", "scripts", "images"]) {
+  for (const dir of ["styles", "scripts", "images", "fonts"]) {
     const srcDir = path.join(ROOT, dir);
     if (fs.existsSync(srcDir)) {
       copyDir(srcDir, path.join(DIST, dir));

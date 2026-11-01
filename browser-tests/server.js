@@ -7,6 +7,7 @@ const mime = {
   ".html": "text/html", ".css": "text/css", ".js": "text/javascript",
   ".jpg": "image/jpeg", ".png": "image/png", ".webp": "image/webp",
   ".mp4": "video/mp4", ".xml": "application/xml", ".txt": "text/plain",
+  ".woff2": "font/woff2", ".vtt": "text/vtt",
 };
 
 http.createServer((req, res) => {
