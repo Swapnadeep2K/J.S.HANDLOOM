@@ -29,6 +29,7 @@ const path = require("path");
 // fetch fresh assets automatically.
 const { execSync, execFileSync } = require("child_process");
 const { generateSitemap } = require("./sitemap");
+const { productSchema, serializeJsonLd } = require("./product-schema");
 
 const version = (() => {
   try { return execSync("git rev-parse --short HEAD").toString().trim(); }
@@ -223,24 +224,9 @@ function renderPDP(product) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org/",
-      "@type": "Product",
-      "name": "${name}",
-      "description": "${description}",
-      "image": "https://swapnadeep2k.github.io/J.S.HANDLOOM/${escapeHtml(product.images[0])}",
-      "availability": "https://schema.org/${availability === 'In Stock' ? 'InStock' : 'OutOfStock'}",
-      "color": "${colour}",
-      "material": "Silk",
-      "offers": {
-        "@type": "Offer",
-        "priceCurrency": "INR",
-        "price": "${price}",
-        "url": "https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${slug}"
-      }
-    }
-    </script>
+    <script type="application/ld+json">${serializeJsonLd(
+      productSchema(product, "https://swapnadeep2k.github.io/J.S.HANDLOOM")
+    )}</script>
     ${analyticsHtml}
   </head>
   <body>
@@ -395,7 +381,7 @@ function renderFilterBar(pool, showCategory) {
       </svg>
       Filters
     </span>
-    <span class="shop-result-count" id="shop-result-count">${pool.length} sarees</span>
+    <span class="shop-result-count" id="shop-result-count" role="status" aria-live="polite" aria-atomic="true">${pool.length} sarees</span>
   </div>
   <div class="shop-filter-bar" id="shop-filter-bar">
     ${categorySelect}
@@ -482,6 +468,22 @@ function renderCategoryPage(slug, name, categoryProducts) {
   const footerHtml = adjustPathsForSubdir(partials["footer"] || "");
   const widgetHtml = adjustPathsForSubdir(partials["support-widget"] || "");
   const analyticsHtml = partials["analytics"] || "";
+  const collectionSchema = {
+    "@context": "https://schema.org",
+    "@type": "Collection",
+    name: `${name} Sarees`,
+    description: categoryMetaDescription(name, categoryProducts),
+    url: `https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${slug}`,
+    image: categoryProducts[0]
+      ? `https://swapnadeep2k.github.io/J.S.HANDLOOM/${categoryProducts[0].images[0]}`
+      : "",
+    itemListElement: categoryProducts.slice(0, 5).map((product, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: product.name,
+      url: `https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${product.slug}`,
+    })),
+  };
 
   return `<!DOCTYPE html>
 <html lang="en">
@@ -507,24 +509,7 @@ function renderCategoryPage(slug, name, categoryProducts) {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Collection",
-      "name": "${safeName} Sarees",
-      "description": "${metaDesc}",
-      "url": "https://swapnadeep2k.github.io/J.S.HANDLOOM/collections/${safeSlug}",
-      "image": "${ogImage}",
-      "itemListElement": [
-        ${categoryProducts.slice(0, 5).map((p, i) => `{
-          "@type": "ListItem",
-          "position": ${i + 1},
-          "name": "${escapeHtml(p.name)}",
-          "url": "https://swapnadeep2k.github.io/J.S.HANDLOOM/products/${p.slug}"
-        }`).join(',\n        ')}
-      ]
-    }
-    </script>
+    <script type="application/ld+json">${serializeJsonLd(collectionSchema)}</script>
     ${analyticsHtml}
   </head>
   <body>
@@ -621,6 +606,7 @@ function build() {
   }
   fs.rmSync(path.join(DIST, "scripts", "build.js"), { force: true });
   fs.rmSync(path.join(DIST, "scripts", "sitemap.js"), { force: true });
+  fs.rmSync(path.join(DIST, "scripts", "product-schema.js"), { force: true });
 
   // Generate and write SEO files
   const sitemapXml = generateSitemap({
