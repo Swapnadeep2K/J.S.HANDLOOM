@@ -3,10 +3,16 @@
   "private": true,
   "description": "J.S. Handloom static site - build script stitches partials + product catalog into dist/",
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
   "scripts": {
     "build": "node scripts/build.js",
-    "preview": "node scripts/build.js && npx --yes serve dist"
+    "preview": "node scripts/build.js && npx --yes serve dist",
+    "test": "node --test tests",
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.64.1",
+    "axe-core": "4.14.0"
   }
 }

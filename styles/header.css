@@ -68,13 +68,16 @@
   position: fixed;
   top: 0;
   right: -100%;
-  width: 20rem;
+  box-sizing: border-box;
+  width: min(20rem, 100vw);
   height: 100%;
   background-color: #3a001e;
   color: white;
   box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
   z-index: 1000;
-  transition: right 0.3s ease;
+  visibility: hidden;
+  pointer-events: none;
+  transition: right 0.3s ease, visibility 0s linear 0.3s;
   display: flex;
   flex-direction: column;
   padding: 20px;
@@ -153,6 +156,9 @@
 /* Sidebar Open State */
 .sidebar.open {
   right: 0;
+  visibility: visible;
+  pointer-events: auto;
+  transition: right 0.3s ease, visibility 0s;
 }
 
 .overlay.active {

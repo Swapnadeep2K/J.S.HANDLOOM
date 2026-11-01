@@ -1,96 +1,126 @@
 const galleryImages = document.querySelectorAll(".featured-image-gallery img");
 const popupOverlay = document.getElementById("image-popup-overlay");
-// const popupImage = document.getElementById("image-popup");
 const closeBtn = document.getElementById("closeBtn");
-const popupCarouselIndicators = document.querySelector(
-  ".image-popup-overlay .carousel-indicators"
-);
-const popupCarouselInner = document.querySelector(
-  ".image-popup-overlay .carousel-inner"
-);
-var temp = 0;
+const popupCarousel = document.getElementById("carouselExampleIndicators");
+const popupCarouselIndicators = popupOverlay.querySelector(".carousel-indicators");
+const popupCarouselInner = popupOverlay.querySelector(".carousel-inner");
+let opener = null;
 
-galleryImages.forEach((image) => {
-  popupCarouselIndicators.insertAdjacentHTML(
-    "beforeend",
-    '<button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to=' +
-      temp +
-      ' aria-label="Slide ' +
-      temp +
-      '"></button>'
-  );
-  popupCarouselInner.insertAdjacentHTML(
-    "beforeend",
-    '<div class="carousel-item"><img src="' +
-      image.src +
-      '" class="d-block w-100" data-carousel-slide="' +
-      temp +
-      '" alt="' +
-      image.alt +
-      '" /></div>'
-  );
-  image.addEventListener("click", () => {
-    const popupCarouselIndicatorsButton = document.querySelectorAll(
-      ".image-popup-overlay .carousel-indicators button"
-    );
-    const popupCarouselInnerItem = document.querySelectorAll(
-      ".image-popup-overlay .carousel-inner .carousel-item"
-    );
-    // popupImage.src = image.src;
+function loadSlideImage(item) {
+  const image = item.querySelector("img");
+  if (image && !image.hasAttribute("src")) {
+    image.setAttribute("src", image.getAttribute("data-carousel-src"));
+  }
+}
+
+galleryImages.forEach((image, index) => {
+  const indicator = document.createElement("button");
+  indicator.type = "button";
+  indicator.setAttribute("data-bs-target", "#carouselExampleIndicators");
+  indicator.setAttribute("data-bs-slide-to", String(index));
+  indicator.setAttribute("aria-label", `Show image ${index + 1}`);
+  popupCarouselIndicators.appendChild(indicator);
+
+  const item = document.createElement("div");
+  item.className = "carousel-item";
+  const popupImage = document.createElement("img");
+  popupImage.className = "d-block w-100";
+  popupImage.setAttribute("data-carousel-src", image.currentSrc || image.src);
+  popupImage.setAttribute("data-carousel-slide", String(index));
+  popupImage.alt = image.alt;
+  item.appendChild(popupImage);
+  popupCarouselInner.appendChild(item);
+
+  const open = () => {
+    opener = image;
+    const selectedSlide = image.getAttribute("data-showcase-slide");
+    const items = popupCarouselInner.querySelectorAll(".carousel-item");
+    const indicators = popupCarouselIndicators.querySelectorAll("button");
+
+    items.forEach((slide) => {
+      const active = slide.querySelector("img").getAttribute("data-carousel-slide") === selectedSlide;
+      slide.classList.toggle("active", active);
+      if (active) loadSlideImage(slide);
+    });
+    indicators.forEach((button) => {
+      const active = button.getAttribute("data-bs-slide-to") === selectedSlide;
+      button.classList.toggle("active", active);
+      if (active) button.setAttribute("aria-current", "true");
+      else button.removeAttribute("aria-current");
+    });
+
     popupOverlay.classList.add("active");
+    popupOverlay.setAttribute("aria-hidden", "false");
     const scrollY = window.scrollY;
     document.body.style.top = `-${scrollY}px`;
     document.body.classList.add("no-scroll");
-    popupCarouselInnerItem.forEach(function (e) {
-      if (
-        image.getAttribute("data-showcase-slide") ===
-        e.querySelector("img").getAttribute("data-carousel-slide")
-      ) {
-        e.classList.add("active");
-      }
-    });
-    popupCarouselIndicatorsButton.forEach(function (e) {
-      if (
-        image.getAttribute("data-showcase-slide") ===
-        e.getAttribute("data-bs-slide-to")
-      ) {
-        e.classList.add("active");
-        e.setAttribute("aria-current", "true");
-      }
-    });
+    closeBtn.focus();
+  };
+
+  image.addEventListener("click", open);
+  image.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      open();
+    }
   });
-  temp++;
 });
 
-closeBtn.addEventListener("click", () => {
-    const popupCarouselIndicatorsButton = document.querySelectorAll(
-        ".image-popup-overlay .carousel-indicators button"
-      );
-      const popupCarouselInnerItem = document.querySelectorAll(
-        ".image-popup-overlay .carousel-inner .carousel-item"
-      );
+popupCarousel.addEventListener("slide.bs.carousel", (event) => {
+  if (event.relatedTarget) loadSlideImage(event.relatedTarget);
+});
+
+function closePopup() {
+  if (!popupOverlay.classList.contains("active")) return;
+
   popupOverlay.classList.remove("active");
-  const scrollY = Math.abs(parseInt(document.body.style.top || "0"));
+  popupOverlay.setAttribute("aria-hidden", "true");
+  const scrollY = Math.abs(parseInt(document.body.style.top || "0", 10));
   document.body.classList.remove("no-scroll");
   document.body.style.top = "";
   window.scrollTo(0, scrollY);
-  popupCarouselInnerItem.forEach(function (e) {
-    if(e.classList.contains("active")) {
-        e.classList.remove("active");
-    }
+  popupCarouselInner.querySelectorAll(".carousel-item.active").forEach((item) => {
+    item.classList.remove("active");
   });
-  popupCarouselIndicatorsButton.forEach(function (e) {
-    if(e.classList.contains("active")) {
-        e.classList.remove("active");
-        e.setAttribute("aria-current", "");
-    }
+  popupCarouselIndicators.querySelectorAll("button").forEach((button) => {
+    button.classList.remove("active");
+    button.removeAttribute("aria-current");
   });
+  if (opener) opener.focus();
+  opener = null;
+}
+
+closeBtn.addEventListener("click", closePopup);
+popupOverlay.addEventListener("click", (event) => {
+  if (event.target === popupOverlay) closePopup();
 });
+popupOverlay.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    event.preventDefault();
+    closePopup();
+    return;
+  }
+  if (event.key !== "Tab") return;
 
-// const carousel = new bootstrap.Carousel('#carouselExampleIndicators')
+  const focusable = popupOverlay.querySelectorAll(
+    'button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+  );
+  const visible = Array.from(focusable).filter(
+    (element) => element.getAttribute("aria-hidden") !== "true" && element.tabIndex >= 0
+  );
+  if (!visible.length) {
+    event.preventDefault();
+    closeBtn.focus();
+    return;
+  }
 
-// popupOverlay.addEventListener("click", (e) => {
-//   if (e.target === popupOverlay) {
-//     popupOverlay.classList.remove("active");
-//   }
-// });
+  const first = visible[0];
+  const last = visible[visible.length - 1];
+  if (event.shiftKey && document.activeElement === first) {
+    event.preventDefault();
+    last.focus();
+  } else if (!event.shiftKey && document.activeElement === last) {
+    event.preventDefault();
+    first.focus();
+  }
+});
