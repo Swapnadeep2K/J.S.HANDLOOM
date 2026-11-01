@@ -24,7 +24,7 @@ const JOBS = [
   { file: "side-saree-3.jpg",           maxW: 400,  jpgQ: 80, webpQ: 82 },
   { file: "side-saree-4.jpg",           maxW: 400,  jpgQ: 80, webpQ: 82 },
   // CSS background images: 1440px covers all screens with WebP gains.
-  { file: "hero-banner.jpg",            maxW: 1920, jpgQ: 78, webpQ: 80 },
+  { file: "hero-banner.jpg",            maxW: 1920, jpgQ: 78, webpQ: 75 },
   { file: "coming-soon-background.jpg", maxW: 1440, jpgQ: 68, webpQ: 70 },
   // Coming-soon cartoon: rendered at ≤ 160px (10rem), 320px covers 2× retina.
   { file: "saree-cartoon.png",          maxW: 320,  webpQ: 85, keepPng: true },

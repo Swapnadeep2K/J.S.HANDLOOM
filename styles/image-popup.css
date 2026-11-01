@@ -17,6 +17,15 @@
   display: flex;
 }
 
+.image-popup-overlay:focus {
+  outline: none;
+}
+
+.featured-image-gallery img[role="button"]:focus-visible {
+  outline: 3px solid var(--color-maroon-900);
+  outline-offset: 4px;
+}
+
 /* Card wrapper */
 .image-popup-content {
   position: relative;
@@ -130,6 +139,12 @@
 
 .close-btn:hover {
   background-color: #5a0030;
+}
+
+.close-btn:focus-visible,
+#carouselExampleIndicators button:focus-visible {
+  outline: 3px solid var(--color-cream);
+  outline-offset: 3px;
 }
 
 .close-btn svg {

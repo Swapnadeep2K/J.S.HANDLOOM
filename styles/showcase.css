@@ -106,8 +106,21 @@
 
 /* Instagram embed side */
 .insta-iframe {
+  position: relative;
   flex: 1;
   min-width: 0;
+}
+
+.insta-iframe .instagram-media,
+.insta-iframe iframe {
+  box-sizing: border-box;
+  /* Override the embed's inline sizing, including its minimum width on mobile. */
+  min-width: 0 !important;
+  max-width: 100% !important;
+}
+
+.insta-iframe iframe {
+  width: 100%;
 }
 
 /* Responsive */
@@ -117,8 +130,6 @@
   }
 
   .insta-iframe {
-    max-height: 480px;
-    overflow: hidden;
     width: 100%;
   }
 }

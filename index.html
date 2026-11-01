@@ -14,6 +14,7 @@
     content="Hand-painted Murshidabad Silk and Muslin Silk sarees, Govt Silk Mark Certified. Enquire on WhatsApp." />
   <meta property="og:image" content="images/main-saree.jpg" />
   <meta property="og:type" content="website" />
+  <link rel="preload" href="images/hero-banner.webp" as="image" type="image/webp" fetchpriority="high" />
   <link rel="stylesheet" href="styles/tokens.css" />
   <link rel="stylesheet" href="styles/general.css" />
   <link rel="stylesheet" href="styles/header.css" />
@@ -146,7 +147,8 @@
             <div class="main-saree-image-div">
               <picture>
                 <source srcset="images/main-saree.webp" type="image/webp" />
-                <img src="images/main-saree.jpg" data-showcase-slide="0"
+                <img src="images/main-saree.jpg" data-showcase-slide="0" role="button" tabindex="0"
+                  aria-haspopup="dialog" aria-label="Open image: Premium handwoven saree from J.S.HANDLOOM collection"
                   alt="Premium handwoven saree from J.S.HANDLOOM collection" class="main-saree-image" width="768"
                   height="842" loading="lazy" />
               </picture>
@@ -154,25 +156,29 @@
             <div class="side-saree-image-div">
               <picture>
                 <source srcset="images/side-saree-1.webp" type="image/webp" />
-                <img src="images/side-saree-1.jpg" data-showcase-slide="1"
+                <img src="images/side-saree-1.jpg" data-showcase-slide="1" role="button" tabindex="0"
+                  aria-haspopup="dialog" aria-label="Open image: Elegant traditional saree with intricate details"
                   alt="Elegant traditional saree with intricate details" class="side-saree-image" width="400"
                   height="456" loading="lazy" />
               </picture>
               <picture>
                 <source srcset="images/side-saree-2.webp" type="image/webp" />
-                <img src="images/side-saree-2.jpg" data-showcase-slide="2"
+                <img src="images/side-saree-2.jpg" data-showcase-slide="2" role="button" tabindex="0"
+                  aria-haspopup="dialog" aria-label="Open image: Handcrafted saree showcasing artistic embroidery"
                   alt="Handcrafted saree showcasing artistic embroidery" class="side-saree-image" width="400"
                   height="300" loading="lazy" />
               </picture>
               <picture>
                 <source srcset="images/side-saree-3.webp" type="image/webp" />
-                <img src="images/side-saree-3.jpg" data-showcase-slide="3"
+                <img src="images/side-saree-3.jpg" data-showcase-slide="3" role="button" tabindex="0"
+                  aria-haspopup="dialog" aria-label="Open image: Rich textured saree representing heritage craftsmanship"
                   alt="Rich textured saree representing heritage craftsmanship" class="side-saree-image" width="400"
                   height="533" loading="lazy" />
               </picture>
               <picture>
                 <source srcset="images/side-saree-4.webp" type="image/webp" />
-                <img src="images/side-saree-4.jpg" data-showcase-slide="4"
+                <img src="images/side-saree-4.jpg" data-showcase-slide="4" role="button" tabindex="0"
+                  aria-haspopup="dialog" aria-label="Open image: Luxurious saree with traditional weaving patterns"
                   alt="Luxurious saree with traditional weaving patterns" class="side-saree-image" width="400"
                   height="710" loading="lazy" />
               </picture>
@@ -224,44 +230,11 @@
               width: calc(100% - 2px);
             ">
             <div style="padding: 16px">
-              <a href="https://www.instagram.com/p/DEp6DMcTbmb/?utm_source=ig_embed&amp;utm_campaign=loading" style="
-                  background: #ffffff;
-                  line-height: 0;
-                  padding: 0 0;
-                  text-align: center;
-                  text-decoration: none;
-                  width: 100%;
-                " target="_blank">
-                <div style="
-                    display: flex;
-                    flex-direction: row;
-                    align-items: center;
-                  ">
-                  <!-- Instagram Embed Content -->
-                </div>
-              </a>
-              <p style="
-                  color: #c9c8cd;
-                  font-family: Arial, sans-serif;
-                  font-size: 14px;
-                  line-height: 17px;
-                  margin-bottom: 0;
-                  margin-top: 8px;
-                  overflow: hidden;
-                  padding: 8px 0 7px;
-                  text-align: center;
-                  text-overflow: ellipsis;
-                  white-space: nowrap;
-                ">
-                <a href="https://www.instagram.com/p/DEp6DMcTbmb/?utm_source=ig_embed&amp;utm_campaign=loading" style="
-                    color: #c9c8cd;
-                    font-family: Arial, sans-serif;
-                    font-size: 14px;
-                    font-style: normal;
-                    font-weight: normal;
-                    line-height: 17px;
-                    text-decoration: none;
-                  " target="_blank">A post shared by J.S.HANDLOOM (@j.s.handloom)</a>
+              <p style="font-family: Arial, sans-serif; font-size: 14px; line-height: 1.5; text-align: center">
+                <a href="https://www.instagram.com/p/DEp6DMcTbmb/?utm_source=ig_embed&amp;utm_campaign=loading"
+                  target="_blank" rel="noopener noreferrer" style="color: #3a001e">
+                  View this J.S.HANDLOOM post on Instagram
+                </a>
               </p>
             </div>
           </blockquote>
@@ -269,14 +242,15 @@
       </div>
     </section>
 
-    <section class="image-popup-overlay" id="image-popup-overlay">
+    <section class="image-popup-overlay" id="image-popup-overlay" role="dialog" aria-modal="true"
+      aria-label="Saree image gallery" aria-hidden="true">
       <div class="image-popup-content">
-        <button role="button" aria-label="Close" class="close-btn" id="closeBtn">
+        <button type="button" aria-label="Close image gallery" class="close-btn" id="closeBtn">
           <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M1 1L13 13M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
           </svg>
         </button>
-        <div id="carouselExampleIndicators" class="carousel slide">
+        <div id="carouselExampleIndicators" class="carousel slide" aria-label="Saree images">
           <div class="carousel-indicators"></div>
           <div class="carousel-inner"></div>
           <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -377,6 +351,7 @@
 </body>
 <script src="scripts/header.js"></script>
 <script src="scripts/image-popup.js"></script>
+<script src="scripts/instagram-embed.js"></script>
 <script src="scripts/support-widget.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
   integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
